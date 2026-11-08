@@ -1,0 +1,11 @@
+pypdf>=4.0
+google-genai>=1.30
+pydantic>=2.6
+sentence-transformers>=3.0
+transformers>=4.40
+torch>=2.6
+faiss-cpu>=1.8
+numpy>=1.26
+pandas>=2.0
+matplotlib>=3.8
+nbformat>=5.9

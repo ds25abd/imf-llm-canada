@@ -1,0 +1,5 @@
+{
+  "extractor": "gemini-3.5-flash",
+  "challenger": "gemini-3.5-flash-lite",
+  "judge": "gemini-3.8-flash"
+}

@@ -1,0 +1,766 @@
+{
+  "method": "lexicon regex counts over prose + LLM primary-theme classification of prose chunks",
+  "prose_words": 17244,
+  "cohen_kappa_llm_vs_lexicon": 0.427,
+  "themes": [
+    {
+      "theme": "Inflation & Prices",
+      "lexicon_count": 77,
+      "per_1000_words": 4.47,
+      "share_pct": 12.1,
+      "llm_chunks": 10,
+      "llm_chunk_share_pct": 12.7
+    },
+    {
+      "theme": "Interest Rates & Credit",
+      "lexicon_count": 90,
+      "per_1000_words": 5.22,
+      "share_pct": 14.1,
+      "llm_chunks": 8,
+      "llm_chunk_share_pct": 10.1
+    },
+    {
+      "theme": "Housing & Real Estate",
+      "lexicon_count": 86,
+      "per_1000_words": 4.99,
+      "share_pct": 13.5,
+      "llm_chunks": 7,
+      "llm_chunk_share_pct": 8.9
+    },
+    {
+      "theme": "Banking Capital & Liquidity",
+      "lexicon_count": 91,
+      "per_1000_words": 5.28,
+      "share_pct": 14.3,
+      "llm_chunks": 7,
+      "llm_chunk_share_pct": 8.9
+    },
+    {
+      "theme": "Sovereign Debt",
+      "lexicon_count": 87,
+      "per_1000_words": 5.05,
+      "share_pct": 13.6,
+      "llm_chunks": 6,
+      "llm_chunk_share_pct": 7.6
+    },
+    {
+      "theme": "Labor Market Dynamics",
+      "lexicon_count": 100,
+      "per_1000_words": 5.8,
+      "share_pct": 15.7,
+      "llm_chunks": 6,
+      "llm_chunk_share_pct": 7.6
+    },
+    {
+      "theme": "Systemic Financial Risk",
+      "lexicon_count": 107,
+      "per_1000_words": 6.21,
+      "share_pct": 16.8,
+      "llm_chunks": 7,
+      "llm_chunk_share_pct": 8.9
+    }
+  ],
+  "theme_by_section": {
+    "Press Release & Executive Board Assessment": {
+      "Inflation & Prices": 6,
+      "Interest Rates & Credit": 6,
+      "Housing & Real Estate": 5,
+      "Banking Capital & Liquidity": 3,
+      "Sovereign Debt": 8,
+      "Labor Market Dynamics": 3,
+      "Systemic Financial Risk": 13
+    },
+    "Key Issues": {
+      "Inflation & Prices": 4,
+      "Interest Rates & Credit": 3,
+      "Housing & Real Estate": 5,
+      "Banking Capital & Liquidity": 1,
+      "Sovereign Debt": 3,
+      "Labor Market Dynamics": 1,
+      "Systemic Financial Risk": 7
+    },
+    "Context": {
+      "Inflation & Prices": 0,
+      "Interest Rates & Credit": 1,
+      "Housing & Real Estate": 2,
+      "Banking Capital & Liquidity": 0,
+      "Sovereign Debt": 0,
+      "Labor Market Dynamics": 1,
+      "Systemic Financial Risk": 1
+    },
+    "Recent Economic Outcomes": {
+      "Inflation & Prices": 10,
+      "Interest Rates & Credit": 7,
+      "Housing & Real Estate": 4,
+      "Banking Capital & Liquidity": 11,
+      "Sovereign Debt": 2,
+      "Labor Market Dynamics": 12,
+      "Systemic Financial Risk": 9
+    },
+    "Outlook and Risks": {
+      "Inflation & Prices": 9,
+      "Interest Rates & Credit": 0,
+      "Housing & Real Estate": 0,
+      "Banking Capital & Liquidity": 4,
+      "Sovereign Debt": 2,
+      "Labor Market Dynamics": 8,
+      "Systemic Financial Risk": 1
+    },
+    "Policy Discussions": {
+      "Inflation & Prices": 0,
+      "Interest Rates & Credit": 0,
+      "Housing & Real Estate": 0,
+      "Banking Capital & Liquidity": 0,
+      "Sovereign Debt": 0,
+      "Labor Market Dynamics": 0,
+      "Systemic Financial Risk": 1
+    },
+    "Policy A: A Counter-Cyclical Monetary and Fis": {
+      "Inflation & Prices": 7,
+      "Interest Rates & Credit": 11,
+      "Housing & Real Estate": 4,
+      "Banking Capital & Liquidity": 5,
+      "Sovereign Debt": 13,
+      "Labor Market Dynamics": 1,
+      "Systemic Financial Risk": 0
+    },
+    "Policy B: Preserving Financial Stability": {
+      "Inflation & Prices": 0,
+      "Interest Rates & Credit": 1,
+      "Housing & Real Estate": 3,
+      "Banking Capital & Liquidity": 14,
+      "Sovereign Debt": 0,
+      "Labor Market Dynamics": 0,
+      "Systemic Financial Risk": 24
+    },
+    "Policy C: Improving Housing Affordability": {
+      "Inflation & Prices": 1,
+      "Interest Rates & Credit": 2,
+      "Housing & Real Estate": 21,
+      "Banking Capital & Liquidity": 0,
+      "Sovereign Debt": 0,
+      "Labor Market Dynamics": 3,
+      "Systemic Financial Risk": 0
+    },
+    "Policy D: Reinvigorating Productivity and Lon": {
+      "Inflation & Prices": 0,
+      "Interest Rates & Credit": 2,
+      "Housing & Real Estate": 5,
+      "Banking Capital & Liquidity": 5,
+      "Sovereign Debt": 3,
+      "Labor Market Dynamics": 18,
+      "Systemic Financial Risk": 2
+    },
+    "Staff Appraisal": {
+      "Inflation & Prices": 3,
+      "Interest Rates & Credit": 3,
+      "Housing & Real Estate": 6,
+      "Banking Capital & Liquidity": 3,
+      "Sovereign Debt": 10,
+      "Labor Market Dynamics": 3,
+      "Systemic Financial Risk": 9
+    },
+    "Box 1. Exchange Rate Pass-Through in Canada": {
+      "Inflation & Prices": 19,
+      "Interest Rates & Credit": 3,
+      "Housing & Real Estate": 0,
+      "Banking Capital & Liquidity": 0,
+      "Sovereign Debt": 0,
+      "Labor Market Dynamics": 0,
+      "Systemic Financial Risk": 1
+    },
+    "Box 2. Policy Response to Tariff Shocks: Mode": {
+      "Inflation & Prices": 4,
+      "Interest Rates & Credit": 12,
+      "Housing & Real Estate": 0,
+      "Banking Capital & Liquidity": 0,
+      "Sovereign Debt": 4,
+      "Labor Market Dynamics": 0,
+      "Systemic Financial Risk": 0
+    },
+    "Box 3. Monetary and Macroprudential Policy In": {
+      "Inflation & Prices": 0,
+      "Interest Rates & Credit": 14,
+      "Housing & Real Estate": 27,
+      "Banking Capital & Liquidity": 0,
+      "Sovereign Debt": 0,
+      "Labor Market Dynamics": 0,
+      "Systemic Financial Risk": 6
+    },
+    "Box 4. Canada’s Productivity Puzzle": {
+      "Inflation & Prices": 0,
+      "Interest Rates & Credit": 0,
+      "Housing & Real Estate": 0,
+      "Banking Capital & Liquidity": 0,
+      "Sovereign Debt": 0,
+      "Labor Market Dynamics": 5,
+      "Systemic Financial Risk": 0
+    },
+    "Box 5. Innovation": {
+      "Inflation & Prices": 0,
+      "Interest Rates & Credit": 0,
+      "Housing & Real Estate": 0,
+      "Banking Capital & Liquidity": 0,
+      "Sovereign Debt": 0,
+      "Labor Market Dynamics": 10,
+      "Systemic Financial Risk": 4
+    },
+    "Box 6. Toward One Canadian Economy": {
+      "Inflation & Prices": 0,
+      "Interest Rates & Credit": 0,
+      "Housing & Real Estate": 0,
+      "Banking Capital & Liquidity": 1,
+      "Sovereign Debt": 0,
+      "Labor Market Dynamics": 6,
+      "Systemic Financial Risk": 0
+    },
+    "Annex I. Government Support Measures": {
+      "Inflation & Prices": 0,
+      "Interest Rates & Credit": 9,
+      "Housing & Real Estate": 1,
+      "Banking Capital & Liquidity": 7,
+      "Sovereign Debt": 0,
+      "Labor Market Dynamics": 19,
+      "Systemic Financial Risk": 0
+    },
+    "Annex II. External Sector Assessment": {
+      "Inflation & Prices": 2,
+      "Interest Rates & Credit": 0,
+      "Housing & Real Estate": 0,
+      "Banking Capital & Liquidity": 4,
+      "Sovereign Debt": 6,
+      "Labor Market Dynamics": 3,
+      "Systemic Financial Risk": 1
+    },
+    "Annex III. Sovereign Risk and Debt Sustainabi": {
+      "Inflation & Prices": 2,
+      "Interest Rates & Credit": 5,
+      "Housing & Real Estate": 0,
+      "Banking Capital & Liquidity": 5,
+      "Sovereign Debt": 24,
+      "Labor Market Dynamics": 0,
+      "Systemic Financial Risk": 0
+    },
+    "Annex IV. Risk Assessment Matrix": {
+      "Inflation & Prices": 8,
+      "Interest Rates & Credit": 3,
+      "Housing & Real Estate": 1,
+      "Banking Capital & Liquidity": 1,
+      "Sovereign Debt": 5,
+      "Labor Market Dynamics": 6,
+      "Systemic Financial Risk": 10
+    },
+    "Annex V. Key FSAP Recommendations": {
+      "Inflation & Prices": 0,
+      "Interest Rates & Credit": 0,
+      "Housing & Real Estate": 1,
+      "Banking Capital & Liquidity": 22,
+      "Sovereign Debt": 0,
+      "Labor Market Dynamics": 1,
+      "Systemic Financial Risk": 13
+    },
+    "Annex VII. Progress on Past Article IV Policy": {
+      "Inflation & Prices": 2,
+      "Interest Rates & Credit": 6,
+      "Housing & Real Estate": 0,
+      "Banking Capital & Liquidity": 3,
+      "Sovereign Debt": 7,
+      "Labor Market Dynamics": 0,
+      "Systemic Financial Risk": 3
+    },
+    "Annex VIII. Updates on Transnational Aspects ": {
+      "Inflation & Prices": 0,
+      "Interest Rates & Credit": 0,
+      "Housing & Real Estate": 1,
+      "Banking Capital & Liquidity": 1,
+      "Sovereign Debt": 0,
+      "Labor Market Dynamics": 0,
+      "Systemic Financial Risk": 0
+    },
+    "Informational Annex (Fund Relations)": {
+      "Inflation & Prices": 0,
+      "Interest Rates & Credit": 2,
+      "Housing & Real Estate": 0,
+      "Banking Capital & Liquidity": 1,
+      "Sovereign Debt": 0,
+      "Labor Market Dynamics": 0,
+      "Systemic Financial Risk": 2
+    }
+  },
+  "chunk_labels": [
+    {
+      "chunk_id": "C000",
+      "primary_theme": "Inflation & Prices",
+      "secondary_theme": "Other",
+      "lexicon_theme": "Systemic Financial Risk"
+    },
+    {
+      "chunk_id": "C001",
+      "primary_theme": "Systemic Financial Risk",
+      "secondary_theme": "Housing & Real Estate",
+      "lexicon_theme": "Systemic Financial Risk"
+    },
+    {
+      "chunk_id": "C002",
+      "primary_theme": "Interest Rates & Credit",
+      "secondary_theme": "Housing & Real Estate",
+      "lexicon_theme": "Sovereign Debt"
+    },
+    {
+      "chunk_id": "C003",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Systemic Financial Risk"
+    },
+    {
+      "chunk_id": "C004",
+      "primary_theme": "Inflation & Prices",
+      "secondary_theme": null,
+      "lexicon_theme": "Inflation & Prices"
+    },
+    {
+      "chunk_id": "C005",
+      "primary_theme": "Interest Rates & Credit",
+      "secondary_theme": "Sovereign Debt",
+      "lexicon_theme": "Interest Rates & Credit"
+    },
+    {
+      "chunk_id": "C006",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Interest Rates & Credit"
+    },
+    {
+      "chunk_id": "C007",
+      "primary_theme": "Inflation & Prices",
+      "secondary_theme": "Sovereign Debt",
+      "lexicon_theme": "Systemic Financial Risk"
+    },
+    {
+      "chunk_id": "C008",
+      "primary_theme": "Systemic Financial Risk",
+      "secondary_theme": "Housing & Real Estate",
+      "lexicon_theme": "Systemic Financial Risk"
+    },
+    {
+      "chunk_id": "C009",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Interest Rates & Credit"
+    },
+    {
+      "chunk_id": "C010",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Housing & Real Estate"
+    },
+    {
+      "chunk_id": "C011",
+      "primary_theme": "Inflation & Prices",
+      "secondary_theme": "Interest Rates & Credit",
+      "lexicon_theme": "Inflation & Prices"
+    },
+    {
+      "chunk_id": "C012",
+      "primary_theme": "Labor Market Dynamics",
+      "secondary_theme": "Inflation & Prices",
+      "lexicon_theme": "Labor Market Dynamics"
+    },
+    {
+      "chunk_id": "C013",
+      "primary_theme": "Banking Capital & Liquidity",
+      "secondary_theme": "Sovereign Debt",
+      "lexicon_theme": "Banking Capital & Liquidity"
+    },
+    {
+      "chunk_id": "C014",
+      "primary_theme": "Banking Capital & Liquidity",
+      "secondary_theme": "Systemic Financial Risk",
+      "lexicon_theme": "Banking Capital & Liquidity"
+    },
+    {
+      "chunk_id": "C015",
+      "primary_theme": "Inflation & Prices",
+      "secondary_theme": "Sovereign Debt",
+      "lexicon_theme": "Inflation & Prices"
+    },
+    {
+      "chunk_id": "C016",
+      "primary_theme": "Systemic Financial Risk",
+      "secondary_theme": "Inflation & Prices",
+      "lexicon_theme": "Labor Market Dynamics"
+    },
+    {
+      "chunk_id": "C017",
+      "primary_theme": "Inflation & Prices",
+      "secondary_theme": null,
+      "lexicon_theme": "Inflation & Prices"
+    },
+    {
+      "chunk_id": "C018",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Systemic Financial Risk"
+    },
+    {
+      "chunk_id": "C019",
+      "primary_theme": "Interest Rates & Credit",
+      "secondary_theme": "Sovereign Debt",
+      "lexicon_theme": "Interest Rates & Credit"
+    },
+    {
+      "chunk_id": "C020",
+      "primary_theme": "Sovereign Debt",
+      "secondary_theme": null,
+      "lexicon_theme": "Sovereign Debt"
+    },
+    {
+      "chunk_id": "C021",
+      "primary_theme": "Inflation & Prices",
+      "secondary_theme": "Sovereign Debt",
+      "lexicon_theme": "Inflation & Prices"
+    },
+    {
+      "chunk_id": "C022",
+      "primary_theme": "Interest Rates & Credit",
+      "secondary_theme": "Sovereign Debt",
+      "lexicon_theme": "Interest Rates & Credit"
+    },
+    {
+      "chunk_id": "C023",
+      "primary_theme": "Sovereign Debt",
+      "secondary_theme": null,
+      "lexicon_theme": "Interest Rates & Credit"
+    },
+    {
+      "chunk_id": "C024",
+      "primary_theme": "Banking Capital & Liquidity",
+      "secondary_theme": "Systemic Financial Risk",
+      "lexicon_theme": "Systemic Financial Risk"
+    },
+    {
+      "chunk_id": "C025",
+      "primary_theme": "Banking Capital & Liquidity",
+      "secondary_theme": "Housing & Real Estate",
+      "lexicon_theme": "Systemic Financial Risk"
+    },
+    {
+      "chunk_id": "C026",
+      "primary_theme": "Banking Capital & Liquidity",
+      "secondary_theme": "Systemic Financial Risk",
+      "lexicon_theme": "Systemic Financial Risk"
+    },
+    {
+      "chunk_id": "C027",
+      "primary_theme": "Housing & Real Estate",
+      "secondary_theme": null,
+      "lexicon_theme": "Housing & Real Estate"
+    },
+    {
+      "chunk_id": "C028",
+      "primary_theme": "Housing & Real Estate",
+      "secondary_theme": null,
+      "lexicon_theme": "Housing & Real Estate"
+    },
+    {
+      "chunk_id": "C029",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Housing & Real Estate"
+    },
+    {
+      "chunk_id": "C030",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Labor Market Dynamics"
+    },
+    {
+      "chunk_id": "C031",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Sovereign Debt"
+    },
+    {
+      "chunk_id": "C032",
+      "primary_theme": "Banking Capital & Liquidity",
+      "secondary_theme": null,
+      "lexicon_theme": "Banking Capital & Liquidity"
+    },
+    {
+      "chunk_id": "C033",
+      "primary_theme": "Labor Market Dynamics",
+      "secondary_theme": null,
+      "lexicon_theme": "Labor Market Dynamics"
+    },
+    {
+      "chunk_id": "C034",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Labor Market Dynamics"
+    },
+    {
+      "chunk_id": "C035",
+      "primary_theme": "Other",
+      "secondary_theme": "Sovereign Debt",
+      "lexicon_theme": "Housing & Real Estate"
+    },
+    {
+      "chunk_id": "C036",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Labor Market Dynamics"
+    },
+    {
+      "chunk_id": "C037",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Other"
+    },
+    {
+      "chunk_id": "C038",
+      "primary_theme": "Inflation & Prices",
+      "secondary_theme": null,
+      "lexicon_theme": "Inflation & Prices"
+    },
+    {
+      "chunk_id": "C039",
+      "primary_theme": "Sovereign Debt",
+      "secondary_theme": "Systemic Financial Risk",
+      "lexicon_theme": "Sovereign Debt"
+    },
+    {
+      "chunk_id": "C040",
+      "primary_theme": "Housing & Real Estate",
+      "secondary_theme": "Systemic Financial Risk",
+      "lexicon_theme": "Housing & Real Estate"
+    },
+    {
+      "chunk_id": "C041",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Banking Capital & Liquidity"
+    },
+    {
+      "chunk_id": "C042",
+      "primary_theme": "Inflation & Prices",
+      "secondary_theme": null,
+      "lexicon_theme": "Inflation & Prices"
+    },
+    {
+      "chunk_id": "C043",
+      "primary_theme": "Inflation & Prices",
+      "secondary_theme": null,
+      "lexicon_theme": "Inflation & Prices"
+    },
+    {
+      "chunk_id": "C044",
+      "primary_theme": "Interest Rates & Credit",
+      "secondary_theme": "Sovereign Debt",
+      "lexicon_theme": "Interest Rates & Credit"
+    },
+    {
+      "chunk_id": "C045",
+      "primary_theme": "Interest Rates & Credit",
+      "secondary_theme": "Sovereign Debt",
+      "lexicon_theme": "Interest Rates & Credit"
+    },
+    {
+      "chunk_id": "C046",
+      "primary_theme": "Housing & Real Estate",
+      "secondary_theme": "Interest Rates & Credit",
+      "lexicon_theme": "Housing & Real Estate"
+    },
+    {
+      "chunk_id": "C047",
+      "primary_theme": "Housing & Real Estate",
+      "secondary_theme": "Systemic Financial Risk",
+      "lexicon_theme": "Housing & Real Estate"
+    },
+    {
+      "chunk_id": "C048",
+      "primary_theme": "Housing & Real Estate",
+      "secondary_theme": "Interest Rates & Credit",
+      "lexicon_theme": "Housing & Real Estate"
+    },
+    {
+      "chunk_id": "C049",
+      "primary_theme": "Housing & Real Estate",
+      "secondary_theme": null,
+      "lexicon_theme": "Housing & Real Estate"
+    },
+    {
+      "chunk_id": "C050",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Labor Market Dynamics"
+    },
+    {
+      "chunk_id": "C051",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Labor Market Dynamics"
+    },
+    {
+      "chunk_id": "C052",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Labor Market Dynamics"
+    },
+    {
+      "chunk_id": "C053",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Labor Market Dynamics"
+    },
+    {
+      "chunk_id": "C054",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Labor Market Dynamics"
+    },
+    {
+      "chunk_id": "C055",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Labor Market Dynamics"
+    },
+    {
+      "chunk_id": "C094",
+      "primary_theme": "Labor Market Dynamics",
+      "secondary_theme": "Banking Capital & Liquidity",
+      "lexicon_theme": "Labor Market Dynamics"
+    },
+    {
+      "chunk_id": "C095",
+      "primary_theme": "Labor Market Dynamics",
+      "secondary_theme": "Other",
+      "lexicon_theme": "Interest Rates & Credit"
+    },
+    {
+      "chunk_id": "C096",
+      "primary_theme": "Labor Market Dynamics",
+      "secondary_theme": "Banking Capital & Liquidity",
+      "lexicon_theme": "Labor Market Dynamics"
+    },
+    {
+      "chunk_id": "C097",
+      "primary_theme": "Banking Capital & Liquidity",
+      "secondary_theme": "Labor Market Dynamics",
+      "lexicon_theme": "Banking Capital & Liquidity"
+    },
+    {
+      "chunk_id": "C098",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Labor Market Dynamics"
+    },
+    {
+      "chunk_id": "C099",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Sovereign Debt"
+    },
+    {
+      "chunk_id": "C100",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Inflation & Prices"
+    },
+    {
+      "chunk_id": "C101",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Banking Capital & Liquidity"
+    },
+    {
+      "chunk_id": "C102",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Inflation & Prices"
+    },
+    {
+      "chunk_id": "C103",
+      "primary_theme": "Sovereign Debt",
+      "secondary_theme": null,
+      "lexicon_theme": "Sovereign Debt"
+    },
+    {
+      "chunk_id": "C104",
+      "primary_theme": "Sovereign Debt",
+      "secondary_theme": "Interest Rates & Credit",
+      "lexicon_theme": "Sovereign Debt"
+    },
+    {
+      "chunk_id": "C105",
+      "primary_theme": "Sovereign Debt",
+      "secondary_theme": null,
+      "lexicon_theme": "Sovereign Debt"
+    },
+    {
+      "chunk_id": "C120",
+      "primary_theme": "Systemic Financial Risk",
+      "secondary_theme": "Inflation & Prices",
+      "lexicon_theme": "Inflation & Prices"
+    },
+    {
+      "chunk_id": "C121",
+      "primary_theme": "Systemic Financial Risk",
+      "secondary_theme": "Sovereign Debt",
+      "lexicon_theme": "Systemic Financial Risk"
+    },
+    {
+      "chunk_id": "C122",
+      "primary_theme": "Labor Market Dynamics",
+      "secondary_theme": "Inflation & Prices",
+      "lexicon_theme": "Labor Market Dynamics"
+    },
+    {
+      "chunk_id": "C123",
+      "primary_theme": "Systemic Financial Risk",
+      "secondary_theme": "Banking Capital & Liquidity",
+      "lexicon_theme": "Banking Capital & Liquidity"
+    },
+    {
+      "chunk_id": "C124",
+      "primary_theme": "Systemic Financial Risk",
+      "secondary_theme": "Banking Capital & Liquidity",
+      "lexicon_theme": "Banking Capital & Liquidity"
+    },
+    {
+      "chunk_id": "C131",
+      "primary_theme": "Interest Rates & Credit",
+      "secondary_theme": "Inflation & Prices",
+      "lexicon_theme": "Sovereign Debt"
+    },
+    {
+      "chunk_id": "C132",
+      "primary_theme": "Interest Rates & Credit",
+      "secondary_theme": null,
+      "lexicon_theme": "Sovereign Debt"
+    },
+    {
+      "chunk_id": "C133",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Housing & Real Estate"
+    },
+    {
+      "chunk_id": "C134",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Housing & Real Estate"
+    },
+    {
+      "chunk_id": "C135",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Interest Rates & Credit"
+    },
+    {
+      "chunk_id": "C136",
+      "primary_theme": "Other",
+      "secondary_theme": null,
+      "lexicon_theme": "Systemic Financial Risk"
+    }
+  ]
+}

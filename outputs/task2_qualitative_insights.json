@@ -1,0 +1,108 @@
+{
+  "strengths": [
+    {
+      "item": "Resilient financial system with strong capital and liquidity buffers",
+      "explanation": "Banks and major nonbank financial institutions maintain robust capital and liquidity buffers, showing resilience to severe solvency and liquidity shocks in FSAP stress tests.",
+      "evidence_quote": "The financial system is resilient to severe solvency and liquidity shocks, consistent with FSAP findings",
+      "section_id": "S01",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "USMCA exemptions cushioning external trade shock impacts",
+      "explanation": "Deep continental trade integration and USMCA exemptions continue to shelter most bilateral trade, helping cushion Canada's economy against significant U.S. tariff increases.",
+      "evidence_quote": "USMCA exemptions continue to shelter most bilateral trade",
+      "section_id": "S05",
+      "quote_support": 0.75,
+      "quote_verified": true
+    },
+    {
+      "item": "Strong macroeconomic buffers including positive net international investment position",
+      "explanation": "Canada maintains strong policy frameworks and fundamentals, including a positive net international investment position and reliable access to external financing, providing essential economic buffers.",
+      "evidence_quote": "Canada’s strong policy frameworks and fundamentals—including a positive net international investment position and stable external financing—provide important buffers.",
+      "section_id": "S01",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "Internationally competitive tax incentives reducing marginal effective rates",
+      "explanation": "Policies like the Productivity Super-Deduction and Accelerated Investment Incentive reduce the marginal effective tax rate on new capital by over two percentage points, enhancing tax competitiveness.",
+      "evidence_quote": "the Productivity Super-Deduction and Accelerated Investment Incentive reduce the marginal effective tax rate on new capital by over two percentage points",
+      "section_id": "S12",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "Well-anchored inflation expectations enabling measured monetary policy easing",
+      "explanation": "Soft demand and firm cost absorption have contained tariff pass-through to prices, keeping CPI inflation hovering near target and allowing accommodative interest rate cuts.",
+      "evidence_quote": "Inflation is projected to remain close to the 2 percent target, supported by softer demand and firms’ absorption of higher costs.",
+      "section_id": "S01",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "High growth potential from eliminating internal interprovincial trade barriers",
+      "explanation": "Removing non-geographic internal trade barriers across provinces could increase real GDP by up to 7 percent over time through improved labor productivity and resource allocation.",
+      "evidence_quote": "Fully eliminating non-geographic internal trade barriers could raise real GDP by up to 7 percent over time, largely through efficiency gains",
+      "section_id": "S12",
+      "quote_support": 1.0,
+      "quote_verified": true
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "item": "Elevated household leverage and high debt-service burdens",
+      "explanation": "Persistent high household debt and debt-service burdens leave private consumption vulnerable to employment shocks and ongoing mortgage repricing amid historically strained housing affordability.",
+      "evidence_quote": "Elevated household debt and ongoing mortgage repricing leave some households exposed to income and employment shocks",
+      "section_id": "S13",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "CRE exposures and expanding nonbank financial intermediation risks",
+      "explanation": "Pension funds and insurers face material commercial real estate exposures, while growing nonbank intermediation and leverage in repo markets risk amplifying financial market volatility.",
+      "evidence_quote": "pockets of vulnerability persist, including commercial real estate exposures — particularly among pension funds and insurers—and the expanding role of nonbank financial intermediation.",
+      "section_id": "S01",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "Weak productivity growth and persistent gaps in business dynamism",
+      "explanation": "Output per hour worked lags U.S. levels by roughly 30 percent, driven by falling firm entry rates, declining business churn, and rising industrial concentration.",
+      "evidence_quote": "Output per hour worked is now roughly 30 percent lower than in the United States, with the gap having widened over time.",
+      "section_id": "S12",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "Heightened trade policy uncertainty and external tariff disruptions",
+      "explanation": "Higher U.S. tariffs and ongoing trade policy uncertainty disrupt North American supply chains, restraining exports, business investment, confidence, and overall economic hiring.",
+      "evidence_quote": "Higher U.S. tariffs have disrupted tightly integrated North American supply chains and weighed on exports, investment, and confidence.",
+      "section_id": "S01",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "Acute housing affordability pressures and structural supply shortfall",
+      "explanation": "High borrowing costs and a structural supply shortfall estimated at 2.5 million units by 2035 maintain acute affordability pressures and elevated price-to-income ratios in major metros.",
+      "evidence_quote": "conditions remain historically strained, as high borrowing costs and a structural supply shortfall—estimated by CMHC at about 2.5 million units by 2035—continue to anchor elevated price-to-income ratios",
+      "section_id": "S11",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "Internal market fragmentation and non-geographic trade barriers",
+      "explanation": "Differing provincial standards, licensing, and procurement rules create internal trade frictions equivalent to an average ad valorem tariff of about 9 percent, constraining growth.",
+      "evidence_quote": "Staff estimates suggest these frictions are equivalent to an average ad valorem tariff of about 9 percent, with barriers particularly high in services",
+      "section_id": "S12",
+      "quote_support": 1.0,
+      "quote_verified": true
+    }
+  ],
+  "schema_diagnostics": {
+    "json_valid": true,
+    "schema_valid": true,
+    "repaired": false,
+    "error": null
+  }
+}

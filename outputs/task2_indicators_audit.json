@@ -1,0 +1,525 @@
+{
+  "final_indicators": {
+    "country_name": "Canada",
+    "gdp_growth_forecast_pct": 1.6,
+    "headline_inflation_rate_pct": 2.0,
+    "central_bank_policy_rate_pct": 2.25,
+    "non_performing_loan_ratio": 0.7,
+    "unemployment_rate_pct": 6.8,
+    "tier_1_capital_ratio": 15.4
+  },
+  "evidence": {
+    "country_name": "Canada",
+    "gdp_growth_forecast_pct": {
+      "value": 1.6,
+      "reference_period": "2026",
+      "evidence_quote": "Real GDP 4.7 2.0 2.0 1.6 1.6 1.9 1.7 1.7 1.7 1.7",
+      "chunk_id": "C072"
+    },
+    "headline_inflation_rate_pct": {
+      "value": 2.0,
+      "reference_period": "2025",
+      "evidence_quote": "CPI inflation (average) 6.8 3.9 2.4 2.0 2.1 2.1 2.0 2.0 2.0 2.0",
+      "chunk_id": "C072"
+    },
+    "central_bank_policy_rate_pct": {
+      "value": 2.25,
+      "reference_period": "October 2025",
+      "evidence_quote": "With slack widening and inflation expectations well anchored, the Bank of Canada appropriately reduced the policy rate to 2.25 percent in October, bringing it to the lower end of the estimated neutral range and consistent with returning inflation to target.",
+      "chunk_id": "C011"
+    },
+    "non_performing_loan_ratio": {
+      "value": 0.7,
+      "reference_period": "2025",
+      "evidence_quote": "NPLs to Gross Loans 0.4 0.5 0.5 0.5 0.4 0.3 0.5 0.6 0.7",
+      "chunk_id": "C089"
+    },
+    "unemployment_rate_pct": {
+      "value": 6.8,
+      "reference_period": "2025",
+      "evidence_quote": "Unemployment rate (average) 2/ 5.3 5.4 6.4 6.8 6.5 6.3 6.2 6.1 6.0 6.0",
+      "chunk_id": "C072"
+    },
+    "tier_1_capital_ratio": {
+      "value": 15.4,
+      "reference_period": "2025",
+      "evidence_quote": "Tier 1 ratio 12.9 13.2 13.2 13.9 15.1 15.3 15.2 14.9 15.4",
+      "chunk_id": "C089"
+    }
+  },
+  "human_gold": {
+    "gdp_growth_forecast_pct": {
+      "value": 1.6,
+      "pdf_page": 45,
+      "location": "Table 1, Real GDP, 2026 (proj.)"
+    },
+    "headline_inflation_rate_pct": {
+      "value": 2.0,
+      "pdf_page": 45,
+      "location": "Table 1, CPI inflation (average), 2025"
+    },
+    "central_bank_policy_rate_pct": {
+      "value": 2.25,
+      "pdf_page": 11,
+      "location": "¶6: 'reduced the policy rate to 2¼ percent in October'"
+    },
+    "non_performing_loan_ratio": {
+      "value": 0.7,
+      "pdf_page": 49,
+      "location": "Table 5, NPLs to gross loans, 2025 (text ¶10 says 'below 0.6 percent')"
+    },
+    "unemployment_rate_pct": {
+      "value": 6.8,
+      "pdf_page": 45,
+      "location": "Table 1, Unemployment rate (average), 2025"
+    },
+    "tier_1_capital_ratio": {
+      "value": 15.4,
+      "pdf_page": 49,
+      "location": "Table 5, Tier 1 ratio, 2025"
+    }
+  },
+  "verification": [
+    {
+      "config": "A_strict_extractor",
+      "field": "gdp_growth_forecast_pct",
+      "extracted": 1.6,
+      "final": 1.6,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2026",
+      "gold": 1.6,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Accurately reflects the projected real GDP growth of 1.6 percent for 2026 in Table 1.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "A_strict_extractor",
+      "field": "headline_inflation_rate_pct",
+      "extracted": 2.0,
+      "final": 2.0,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2025",
+      "gold": 2.0,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Accurately reflects the projected average CPI inflation of 2.0 percent for 2025 in Table 1.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "A_strict_extractor",
+      "field": "central_bank_policy_rate_pct",
+      "extracted": 2.25,
+      "final": 2.25,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "October 2025",
+      "gold": 2.25,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Correctly states the policy rate of 2.25 percent established by the Bank of Canada in October 2025.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "A_strict_extractor",
+      "field": "non_performing_loan_ratio",
+      "extracted": 0.7,
+      "final": 0.7,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2025",
+      "gold": 0.7,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Accurately identifies the latest available NPL to gross loans ratio of 0.7 percent for 2025 from Table 5.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "A_strict_extractor",
+      "field": "unemployment_rate_pct",
+      "extracted": 6.8,
+      "final": 6.8,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2025",
+      "gold": 6.8,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Accurately extracted the average unemployment rate projection of 6.8 percent for 2025 from Table 1.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "A_strict_extractor",
+      "field": "tier_1_capital_ratio",
+      "extracted": 15.4,
+      "final": 15.4,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2025",
+      "gold": 15.4,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Accurately reports the latest available Tier 1 capital ratio of 15.4 percent for 2025 from Table 5.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "B_strict_challenger",
+      "field": "gdp_growth_forecast_pct",
+      "extracted": 1.6,
+      "final": 1.6,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2026",
+      "gold": 1.6,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "In Table 1 (C072), projected real GDP growth for 2026 is 1.6 percent.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "B_strict_challenger",
+      "field": "headline_inflation_rate_pct",
+      "extracted": 2.0,
+      "final": 2.0,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2025",
+      "gold": 2.0,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "In Table 1 (C072), average CPI inflation for 2025 is 2.0 percent.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "B_strict_challenger",
+      "field": "central_bank_policy_rate_pct",
+      "extracted": 2.25,
+      "final": 2.25,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "latest",
+      "gold": 2.25,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "C011 and C131 state the Bank of Canada reduced the policy rate to 2.25 percent in October 2025, which is the latest policy rate reported.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "B_strict_challenger",
+      "field": "non_performing_loan_ratio",
+      "extracted": 0.7,
+      "final": 0.7,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2025",
+      "gold": 0.7,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "In Table 5 (C089), NPLs to gross loans for the latest available period (2025 Q2) is 0.7 percent.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "B_strict_challenger",
+      "field": "unemployment_rate_pct",
+      "extracted": 6.8,
+      "final": 6.8,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2025",
+      "gold": 6.8,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "In Table 1 (C072), the average unemployment rate for 2025 is projected at 6.8 percent.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "B_strict_challenger",
+      "field": "tier_1_capital_ratio",
+      "extracted": 15.4,
+      "final": 15.4,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2025",
+      "gold": 15.4,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "In Table 5 (C089), the Tier 1 ratio for the latest available period (2025 Q2) is 15.4 percent.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "C_generic_prompt",
+      "field": "gdp_growth_forecast_pct",
+      "extracted": 1.6,
+      "final": 1.6,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": null,
+      "gold": 1.6,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Table 1 projects real GDP growth for 2026 at 1.6 percent.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "C_generic_prompt",
+      "field": "headline_inflation_rate_pct",
+      "extracted": 2.0,
+      "final": 2.0,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": null,
+      "gold": 2.0,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Table 1 projects average CPI inflation for 2025 at 2.0 percent.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "C_generic_prompt",
+      "field": "central_bank_policy_rate_pct",
+      "extracted": 2.25,
+      "final": 2.25,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": null,
+      "gold": 2.25,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "The text confirms the Bank of Canada reduced the policy rate to 2.25 percent in October 2025.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "C_generic_prompt",
+      "field": "non_performing_loan_ratio",
+      "extracted": 0.7,
+      "final": 0.7,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": null,
+      "gold": 0.7,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Table 5 shows NPLs to gross loans at 0.7 percent for 2025 (latest available data).",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "C_generic_prompt",
+      "field": "unemployment_rate_pct",
+      "extracted": 6.8,
+      "final": 6.8,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": null,
+      "gold": 6.8,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Table 1 projects the average unemployment rate for 2025 at 6.8 percent.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "C_generic_prompt",
+      "field": "tier_1_capital_ratio",
+      "extracted": 15.4,
+      "final": 15.4,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": null,
+      "gold": 15.4,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Table 5 shows the Tier 1 capital ratio at 15.4 percent for 2025 (latest available data).",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    }
+  ],
+  "fallback_log": [],
+  "benchmark": [
+    {
+      "config": "A_strict_extractor",
+      "model": "gemini-3.5-flash",
+      "json_valid": true,
+      "schema_compliant": true,
+      "accuracy_vs_gold_pct": 100.0,
+      "fields_extracted_pct": 100.0,
+      "judge_factual_accuracy": 5,
+      "judge_schema_compliance": 5,
+      "judge_human_agreement_pct": 100.0,
+      "latency_s": 16.17
+    },
+    {
+      "config": "B_strict_challenger",
+      "model": "gemini-3.5-flash-lite",
+      "json_valid": true,
+      "schema_compliant": true,
+      "accuracy_vs_gold_pct": 100.0,
+      "fields_extracted_pct": 100.0,
+      "judge_factual_accuracy": 5,
+      "judge_schema_compliance": 5,
+      "judge_human_agreement_pct": 100.0,
+      "latency_s": 2.02
+    },
+    {
+      "config": "C_generic_prompt",
+      "model": "gemini-3.5-flash",
+      "json_valid": true,
+      "schema_compliant": true,
+      "accuracy_vs_gold_pct": 100.0,
+      "fields_extracted_pct": 100.0,
+      "judge_factual_accuracy": 5,
+      "judge_schema_compliance": 5,
+      "judge_human_agreement_pct": 100.0,
+      "latency_s": 6.42
+    }
+  ],
+  "judge_audits": {
+    "A_strict_extractor": {
+      "field_verdicts": [
+        {
+          "field": "gdp_growth_forecast_pct",
+          "verdict": "correct",
+          "comment": "Accurately reflects the projected real GDP growth of 1.6 percent for 2026 in Table 1."
+        },
+        {
+          "field": "headline_inflation_rate_pct",
+          "verdict": "correct",
+          "comment": "Accurately reflects the projected average CPI inflation of 2.0 percent for 2025 in Table 1."
+        },
+        {
+          "field": "central_bank_policy_rate_pct",
+          "verdict": "correct",
+          "comment": "Correctly states the policy rate of 2.25 percent established by the Bank of Canada in October 2025."
+        },
+        {
+          "field": "non_performing_loan_ratio",
+          "verdict": "correct",
+          "comment": "Accurately identifies the latest available NPL to gross loans ratio of 0.7 percent for 2025 from Table 5."
+        },
+        {
+          "field": "unemployment_rate_pct",
+          "verdict": "correct",
+          "comment": "Accurately extracted the average unemployment rate projection of 6.8 percent for 2025 from Table 1."
+        },
+        {
+          "field": "tier_1_capital_ratio",
+          "verdict": "correct",
+          "comment": "Accurately reports the latest available Tier 1 capital ratio of 15.4 percent for 2025 from Table 5."
+        }
+      ],
+      "factual_accuracy": 5,
+      "schema_compliance": 5
+    },
+    "B_strict_challenger": {
+      "field_verdicts": [
+        {
+          "field": "gdp_growth_forecast_pct",
+          "verdict": "correct",
+          "comment": "In Table 1 (C072), projected real GDP growth for 2026 is 1.6 percent."
+        },
+        {
+          "field": "headline_inflation_rate_pct",
+          "verdict": "correct",
+          "comment": "In Table 1 (C072), average CPI inflation for 2025 is 2.0 percent."
+        },
+        {
+          "field": "central_bank_policy_rate_pct",
+          "verdict": "correct",
+          "comment": "C011 and C131 state the Bank of Canada reduced the policy rate to 2.25 percent in October 2025, which is the latest policy rate reported."
+        },
+        {
+          "field": "non_performing_loan_ratio",
+          "verdict": "correct",
+          "comment": "In Table 5 (C089), NPLs to gross loans for the latest available period (2025 Q2) is 0.7 percent."
+        },
+        {
+          "field": "unemployment_rate_pct",
+          "verdict": "correct",
+          "comment": "In Table 1 (C072), the average unemployment rate for 2025 is projected at 6.8 percent."
+        },
+        {
+          "field": "tier_1_capital_ratio",
+          "verdict": "correct",
+          "comment": "In Table 5 (C089), the Tier 1 ratio for the latest available period (2025 Q2) is 15.4 percent."
+        }
+      ],
+      "factual_accuracy": 5,
+      "schema_compliance": 5
+    },
+    "C_generic_prompt": {
+      "field_verdicts": [
+        {
+          "field": "gdp_growth_forecast_pct",
+          "verdict": "correct",
+          "comment": "Table 1 projects real GDP growth for 2026 at 1.6 percent."
+        },
+        {
+          "field": "headline_inflation_rate_pct",
+          "verdict": "correct",
+          "comment": "Table 1 projects average CPI inflation for 2025 at 2.0 percent."
+        },
+        {
+          "field": "central_bank_policy_rate_pct",
+          "verdict": "correct",
+          "comment": "The text confirms the Bank of Canada reduced the policy rate to 2.25 percent in October 2025."
+        },
+        {
+          "field": "non_performing_loan_ratio",
+          "verdict": "correct",
+          "comment": "Table 5 shows NPLs to gross loans at 0.7 percent for 2025 (latest available data)."
+        },
+        {
+          "field": "unemployment_rate_pct",
+          "verdict": "correct",
+          "comment": "Table 1 projects the average unemployment rate for 2025 at 6.8 percent."
+        },
+        {
+          "field": "tier_1_capital_ratio",
+          "verdict": "correct",
+          "comment": "Table 5 shows the Tier 1 capital ratio at 15.4 percent for 2025 (latest available data)."
+        }
+      ],
+      "factual_accuracy": 5,
+      "schema_compliance": 5
+    }
+  },
+  "retrieved_context_chunks": [
+    "C113",
+    "C114",
+    "C115",
+    "C072",
+    "C015",
+    "C013",
+    "C060",
+    "C011",
+    "C068",
+    "C131",
+    "C069",
+    "C102",
+    "C014",
+    "C071",
+    "C105",
+    "C063",
+    "C064",
+    "C089",
+    "C091",
+    "C090"
+  ]
+}

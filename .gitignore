@@ -1,0 +1,9 @@
+__pycache__/
+.ipynb_checkpoints/
+*.tmp
+.env
+# The written report must NOT be published in this public repository
+report/
+*.docx
+Report*.pdf
+*.log
