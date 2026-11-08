@@ -1,9 +1,9 @@
 # %% [markdown]
 # # IMF Country Report → LLM Text-to-Dashboard Pipeline
-# ## Canada — 2025 Article IV Consultation (IMF Country Report No. 26/12)
+# ## Canada — 2024 Article IV Consultation (IMF Country Report No. 24/128)
 #
 # **Module:** Data Analysis with AI — Assignment 1 (LLM coding case study)
-# **Allocation:** SRN 24135630 → Canada, report years 2024–2025 → *Canada: 2025 Article IV Consultation — Press Release; and Staff Report* (published 21 Jan 2026).
+# **Allocation:** SRN 24135630 → Canada, report years 2024–2025 → *Canada: 2024 Article IV Consultation — Press Release; and Staff Report* (IMF Country Report No. 24/128, published 16 July 2024). This is the latest Article IV staff report published within the 2024–2025 volumes; the 2025 Article IV was only published in the 2026 volume (CR 26/12, January 2026), and the 2025 volume contains only an FSAP stability assessment, which is not an Article IV report.
 #
 # ### What this notebook does
 # | Stage | Task | Main techniques |
@@ -94,12 +94,13 @@ print("Python", sys.version.split()[0], "| pandas", pd.__version__, "| Colab:", 
 class Config:
     # --- document ---
     country: str = "Canada"
-    report_title: str = "Canada: 2025 Article IV Consultation-Press Release; and Staff Report"
-    report_id: str = "IMF Country Report No. 26/12"
-    pdf_filename: str = "canada_2025_article_iv.pdf"
-    pdf_url: str = "https://www.imf.org/-/media/files/publications/cr/2026/english/1canea2026001.pdf"
+    report_title: str = "Canada: 2024 Article IV Consultation-Press Release; and Staff Report"
+    report_id: str = "IMF Country Report No. 24/128"
+    consultation_year: int = 2024
+    pdf_filename: str = "canada_2024_article_iv.pdf"
+    pdf_url: str = "https://www.imf.org/-/media/files/publications/cr/2024/english/1canea2024001.pdf"
     repo_url: str = "https://github.com/ds25abd/imf-llm-canada.git"
-    first_projection_year: int = 2025       # Table 1 marks 2025 onwards as projections
+    first_projection_year: int = 2024       # the indicators table marks 2023 as "Est." and 2024 onwards as "Proj."
     # --- chunking ---
     embed_model: str = "BAAI/bge-small-en-v1.5"
     chunk_tokens: int = 400
@@ -111,7 +112,8 @@ class Config:
     rrf_k: int = 60                          # reciprocal-rank-fusion constant
     multi_query_final_k: int = 8
     # --- LLMs (first available model in each list is used) ---
-    extractor_prefs: tuple = ("gemini-3.5-flash", "gemini-3-flash", "gemini-3-flash-preview",
+    # free tier = 20 requests/day per model, so the pipeline spreads its ~35 calls over three models
+    extractor_prefs: tuple = ("gemini-3.5-flash", "gemini-3.7-flash", "gemini-3-flash", "gemini-3-flash-preview",
                               "gemini-2.5-flash", "gemini-flash-latest")
     challenger_prefs: tuple = ("gemini-3.5-flash-lite", "gemini-3-flash-lite", "gemini-3-flash-lite-preview",
                                "gemini-2.5-flash-lite", "gemini-flash-lite-latest")
@@ -119,11 +121,12 @@ class Config:
                           "gemini-3.5-flash", "gemini-3-flash-preview", "gemini-2.5-flash", "gemini-flash-latest")
     temperature: float = 0.0
     min_seconds_between_calls: float = 4.5   # stays under free-tier requests-per-minute limits
-    max_retries: int = 6
+    max_retries: int = 10                    # 503 "model overloaded" errors are transient: wait them out
     summary_word_limit: int = 100
-    batch_token_budget: int = 24000          # max source tokens packed into one batched LLM call
+    batch_token_budget: int = 60000          # max source tokens per batched call (fewer calls vs. free-tier daily quota)
     # --- fallback ---
-    fallback_value: Optional[float] = None   # JSON null = "not reliably extracted" (see report §3)
+    fallback_value: Optional[float] = None   # in-memory marker for "not reliably extracted"
+    json_fallback_value: float = -1.0        # value written to core_indicators.json (keeps every field a float)
 
 CFG = Config()
 
@@ -333,6 +336,9 @@ class GeminiLLM:
             except Exception as e:
                 code = getattr(e, "code", None)
                 msg = str(e)
+                if code == 429 and "PerDay" in msg:
+                    raise RuntimeError(f"[{task}] daily free-tier quota for {model} is used up. Re-run later: every "
+                                       "completed call is cached, so the run resumes where it stopped.") from e
                 if code in (429, 500, 502, 503, 504) or "RESOURCE_EXHAUSTED" in msg:
                     m = re.search(r"retry in ([\d.]+)s", msg)
                     delay = float(m.group(1)) + 1 if m else min(60, 5 * 2 ** attempt)
@@ -454,30 +460,41 @@ def header_footer_patterns(country: str) -> List[re.Pattern]:
         r".*_{4,}.*",                                    # TOC leader lines
     ]]
 
+NUMERIC_ROW = re.compile(r"(?:\s-?\d[\d,]*\.?\d*){4,}\s*$")    # a row ending in >= 4 numbers
+
 def classify_page(lines: List[str]) -> str:
     first = next((l for l in lines if l), "")
     if re.match(r"^(Annex [IVX]+\.\s+)?Figure \d+\.", first):
         return "figure"
     if re.match(r"^(Annex [IVX]+\.\s+)?Table( \d+)?\.", first):
         return "table"
+    # untitled statistical tables (e.g. the press release's "Selected Economic Indicators"):
+    # many lines that end in a run of numbers
+    numeric = sum(bool(NUMERIC_ROW.search(l)) for l in lines)
+    if numeric >= 8 and numeric / max(len(lines), 1) >= 0.35:
+        return "table"
     return "text"
 
 HEADING_RE = re.compile(
-    r"^(KEY ISSUES|CONTEXT|RECENT ECONOMIC (OUTCOMES|DEVELOPMENTS)|OUTLOOK AND RISKS|POLICY DISCUSSIONS|"
+    r"^(KEY ISSUES|CONTEXT|RECENT (ECONOMIC )?(OUTCOMES|DEVELOPMENTS)|OUTLOOK AND RISKS|POLICY DISCUSSIONS|"
     r"STAFF APPRAISAL|FUND RELATIONS|[A-H]\.\s+[A-Z].{3,90}|Box \d+\..*|Annex [IVX]+\..*|Figure \d+\..*|Table \d+\..*)$")
 
 def reflow(lines: List[str]) -> str:
     """Join hard-wrapped lines into paragraphs; keep breaks before numbered paragraphs, bullets and headings."""
     paras, cur = [], ""
     for ln in lines:
-        new_block = (re.match(r"^\d{1,2}\.\s{2,}", ln) or ln.startswith("•") or HEADING_RE.match(ln))
+        # a heading-like line only counts as a heading if the previous text ended a sentence;
+        # otherwise it is a wrapped cross-reference such as "...presented in\nAnnex XII. Eliminating ..."
+        is_heading = bool(HEADING_RE.match(ln)) and (ln.isupper() or not cur or cur.isupper()
+                                                     or cur.rstrip().endswith((".", ":", ")")))
+        new_block = (re.match(r"^\d{1,2}\.\s{2,}", ln) or ln.startswith("•") or is_heading)
         if new_block and cur:
             paras.append(cur); cur = ""
         if cur.endswith("-") and ln[:1].islower():
             cur = cur + ln                      # "non-\ngeographic" -> "non-geographic"
         else:
             cur = (cur + " " + ln).strip()
-        if HEADING_RE.match(ln) or (ln.endswith((".", ":")) and len(ln) < 60):
+        if is_heading or (ln.endswith((".", ":")) and len(ln) < 60):
             paras.append(cur); cur = ""
     if cur:
         paras.append(cur)
@@ -511,7 +528,12 @@ print("--- cleaned sample (PDF page 11) ---\n", PAGES[10].text[:700])
 
 # %% [markdown]
 # ### 1.3 Section segmentation
-# IMF Article IV staff reports have a stable structure (Press Release → Key Issues → Context → Recent Economic Outcomes → Outlook and Risks → Policy Discussions A–D → Staff Appraisal → Boxes → Figures → Tables → Annexes → Informational Annex). A heading detector walks the cleaned lines and opens a new section at each heading, so **summaries and chunks never straddle two chapters**. Figure pages are grouped into one "Figures" section and excluded from prose summarisation.
+# IMF Article IV staff reports have a stable structure (Press Release → Key Issues → Context → Recent Developments → Outlook and Risks → Policy Discussions A–C → Staff Appraisal → Figures → Tables → Annexes → Informational Annex → Staff Supplement). A heading detector walks the cleaned lines and opens a new section at each heading, so **summaries and chunks never straddle two chapters**. Three structure-aware rules handle the irregularities of this report:
+# * `A./B./C.` sub-headings start a new section **only inside Policy Discussions** — annexes reuse the same lettering for their own sub-parts;
+# * when a chapter is interrupted by an inserted table or figure page (e.g. *Table 1. Coordination Mechanisms* on PDF p.20), the following prose page is attached back to the interrupted chapter;
+# * untitled table pages (the press release's *Selected Economic Indicators*) become their own table section, so their rows are never re-flowed into a paragraph.
+#
+# Figure pages are grouped into one "Figures" section and excluded from prose summarisation.
 
 # %%
 @dataclass
@@ -526,16 +548,19 @@ class Section:
             self.pages.append(page)
         self.text += line + "\n"
 
-def heading_to_section(line: str) -> Optional[tuple]:
-    """Map a heading line to (title, kind) or None."""
-    if re.match(r"^PR \d+/\d+", line):                        return ("Press Release & Executive Board Assessment", "press")
+def heading_to_section(line: str, in_policy: bool = False) -> Optional[tuple]:
+    """Map a heading line to (title, kind) or None.
+    'A. ...' sub-headings only start a new section inside POLICY DISCUSSIONS; inside annexes they are
+    ordinary sub-headings (e.g. 'B. Firm-Level Evidence' in the productivity annex) and stay in the annex."""
+    if re.match(r"^PR ?\d+/\d+", line):                       return ("Press Release & Executive Board Assessment", "press")
+    if "SUPPLEMENTARY INFORMATION" in line:                    return ("Staff Supplement (post-report developments)", "narrative")
     if re.match(r"^STAFF REPORT FOR THE", line):              return ("Staff Report – Front Matter", "front")
     if line == "KEY ISSUES":                                   return ("Key Issues", "narrative")
     if line.startswith("Approved By"):                         return ("Mission Team & Contents", "front")
-    if re.match(r"^(CONTEXT|RECENT ECONOMIC (OUTCOMES|DEVELOPMENTS)|OUTLOOK AND RISKS|POLICY DISCUSSIONS|STAFF APPRAISAL)$", line):
+    if re.match(r"^(CONTEXT|RECENT (ECONOMIC )?(OUTCOMES|DEVELOPMENTS)|OUTLOOK AND RISKS|POLICY DISCUSSIONS|STAFF APPRAISAL)$", line):
         return (line.title().replace("And", "and"), "narrative")
     m = re.match(r"^([A-H])\.\s+(.{3,90})$", line)
-    if m and not line.isupper():                               return (f"Policy {m.group(1)}: {m.group(2).strip()}", "narrative")
+    if m and in_policy and not line.isupper():                 return (f"Policy {m.group(1)}: {m.group(2).strip()}", "narrative")
     if re.match(r"^Box \d+\.", line):                          return (line, "box")
     if re.match(r"^(Annex [IVX]+\.\s+)?Figure \d+\.", line):   return ("Figures", "figure")
     if re.match(r"^(Annex [IVX]+\.\s+)?Table \d+\.", line):    return (line, "table")
@@ -546,24 +571,47 @@ def heading_to_section(line: str) -> Optional[tuple]:
 
 def segment_sections(pages: List[Page]) -> List[Section]:
     sections = [Section("S00", "Cover", "front")]
+    target, last_prose, in_policy = sections[0], None, False
+    PROSE = ("press", "narrative", "box", "annex")
     for pg in pages:
-        for line in pg.text.split("\n"):
-            hit = heading_to_section(line.strip())
+        lines = pg.text.split("\n")
+        first_hit = heading_to_section(lines[0].strip(), in_policy) if lines else None
+        if first_hit is None:
+            if pg.kind == "table" and target.kind != "table":
+                # untitled table page (e.g. the press release's indicator table) -> its own table section
+                target = Section(f"S{len(sections):02d}", lines[0].strip()[:90], "table"); sections.append(target)
+            elif pg.kind == "text" and target.kind in ("table", "figure") and last_prose is not None:
+                # prose resumes after an inserted table/figure page: continue the chapter it interrupted
+                target = last_prose
+        for idx, line in enumerate(lines):
+            hit = heading_to_section(line.strip(), in_policy)
             if hit:
                 title, kind = hit
-                cur = sections[-1]
+                # a figure/table caption on a prose page stays inside the chapter (prose continues below it)
+                if kind in ("figure", "table") and pg.kind != kind:
+                    hit = None
+            if hit:
+                if title == "Policy Discussions":
+                    in_policy = True
+                elif not title.startswith("Policy ") and kind not in ("table", "figure"):
+                    in_policy = False      # an inserted table/figure does not end the Policy Discussions chapter
                 # consecutive figure/annex-figure pages merge into a single section
-                same = (kind == "figure" and cur.kind == "figure") or (title == cur.title)
+                same = (kind == "figure" and target.kind == "figure") or (title == target.title)
                 if not same:
-                    sections.append(Section(f"S{len(sections):02d}", title, kind))
-            target = sections[-1]
-            # a figure page stays "figure" even inside an annex; table pages keep row structure
+                    target = Section(f"S{len(sections):02d}", title, kind); sections.append(target)
+            if target.kind in PROSE:
+                last_prose = target
             target.add(pg.number, line)
     for s in sections:
         s.text = s.text.strip()
-    return [s for s in sections if len(s.text) > 50]
+    # Tables embedded as images have a text layer containing only their title: they carry no data and
+    # would only add empty chunks to the retriever, so they are dropped (and reported below).
+    global IMAGE_ONLY_TABLES
+    IMAGE_ONLY_TABLES = [s.title for s in sections if s.kind == "table" and len(s.text.split()) < 40]
+    return [s for s in sections if len(s.text) > 50 and s.title not in IMAGE_ONLY_TABLES]
 
 SECTIONS = segment_sections(PAGES)
+print("Image-only tables (no text layer, excluded):", IMAGE_ONLY_TABLES)
 sec_df = pd.DataFrame([{"sid": s.sid, "title": s.title[:60], "kind": s.kind,
                         "pages": f"{s.pages[0]}–{s.pages[-1]}", "words": len(s.text.split())} for s in SECTIONS])
 sec_df
@@ -912,7 +960,7 @@ for h in retrieve("Tier 1 capital ratio of banks", k=3):
 # ### 2.1 Thematic distribution (7 financial-stability themes)
 # Two complementary methods:
 # 1. **Lexicon counting** (transparent, reproducible): curated regular expressions per theme counted over the prose (figures/tables excluded to avoid counting axis labels). Reported as raw counts and density per 1,000 words. A term can count towards two themes (e.g. *mortgage rates* → Housing **and** Interest Rates) — intentional, as IMF prose is genuinely multi-topic.
-# 2. **LLM chunk classification**: every prose chunk is assigned one primary theme or `Other` by the *challenger (lite)* model — single-label classification is an easy task, and this keeps the stronger model's quota for extraction. `Other` is essential — a Canada report in 2025 is dominated by trade policy and productivity, which none of the 7 themes captures; forcing a label would inflate the counts.
+# 2. **LLM chunk classification**: every prose chunk is assigned one primary theme or `Other` by the *challenger (lite)* model — single-label classification is an easy task, and this keeps the stronger model's quota for extraction. `Other` is essential. Large parts of this report (immigration, productivity and AI, climate policy, childcare and gender) fall outside the 7 themes, and forcing a label would inflate the counts.
 #
 # Agreement between the two methods is measured with Cohen's κ.
 
@@ -1054,7 +1102,7 @@ qual_df[["type", "item", "quote_support", "quote_verified"]]
 
 # %% [markdown]
 # ### 2.3 Core indicator JSON extraction (schema-constrained, retrieval-grounded)
-# **Field definitions remove ambiguity** — the most common failure in a pilot run was *period ambiguity* (e.g. 2025 estimate vs 2026 projection), so each field states exactly which reference period to report.
+# **Field definitions remove ambiguity.** The most common failure mode in extraction is *period ambiguity*: a 2023 estimate vs a 2024 projection, or a monthly reading (CPI 2.9% in May 2024) vs an annual average (2.5%). So each field states exactly which reference period and statistic to report, and the policy-rate field says explicitly to return `null` when the report only describes the *direction* of policy.
 #
 # **Context:** for each field, a targeted query retrieves the top-4 chunks; the union (de-duplicated) forms one shared context, identical for every configuration, so the comparison is fair.
 #
@@ -1066,17 +1114,23 @@ qual_df[["type", "item", "quote_support", "quote_verified"]]
 # | `C_generic_prompt` | extractor | none — a one-line user prompt | no (free-text reply, parsed leniently) |
 
 # %%
-INDICATOR_FIELDS = {
-    "gdp_growth_forecast_pct": ("Real GDP growth, IMF staff projection for the year after the consultation year (2026), percent.",
-                                "real GDP growth projection selected economic indicators", (-15, 20)),
-    "headline_inflation_rate_pct": ("Headline CPI inflation, annual average for the consultation year (2025), percent.",
-                                    "headline CPI inflation average 2025", (-5, 100)),
-    "central_bank_policy_rate_pct": ("Central bank policy rate at the latest date mentioned, percent.",
-                                     "Bank of Canada reduced the policy rate percent", (0, 50)),
+CY = CFG.consultation_year
+INDICATOR_FIELDS = {   # field -> (definition given to the LLM, retrieval query, plausible range)
+    "gdp_growth_forecast_pct": (f"Real GDP growth, IMF staff projection for the consultation year ({CY}) from the "
+                                "selected economic indicators table, percent.",
+                                f"real GDP growth projection {CY} selected economic indicators", (-15, 20)),
+    "headline_inflation_rate_pct": (f"Headline CPI inflation, annual average for the consultation year ({CY}) from the "
+                                    "selected economic indicators table, percent (not a single monthly reading).",
+                                    f"CPI inflation average {CY} selected economic indicators", (-5, 100)),
+    "central_bank_policy_rate_pct": ("Level of the central bank policy rate, in percent, at the latest date for which the "
+                                     "context explicitly states the level. If the context only describes changes or "
+                                     "direction (e.g. 'began lowering rates'), return null.",
+                                     "Bank of Canada policy rate level percent lowered", (0, 50)),
     "non_performing_loan_ratio": ("Banks' nonperforming loans as percent of gross loans, latest year available.",
                                   "nonperforming loans to gross loans ratio banks", (0, 50)),
-    "unemployment_rate_pct": ("Unemployment rate, annual average for the consultation year (2025), percent.",
-                              "unemployment rate average 2025", (0, 50)),
+    "unemployment_rate_pct": (f"Unemployment rate, annual average for the consultation year ({CY}) from the "
+                              "selected economic indicators table, percent.",
+                              f"unemployment rate average {CY} selected economic indicators", (0, 50)),
     "tier_1_capital_ratio": ("Banks' Tier 1 capital to risk-weighted assets, latest year available, percent.",
                              "Tier 1 capital ratio financial soundness indicators", (0, 40)),
 }
@@ -1178,20 +1232,27 @@ pd.DataFrame({c: r["flat"] or {} for c, r in IND_RUNS.items()})
 # 2. value lies within a plausible range for the indicator (catches scale errors such as 0.0225 instead of 2.25);
 # 3. the value appears in the model's evidence quote, **and** the quote exists in the retrieved context (for the generic config, which gives no quote, the number must appear in the context).
 #
-# If any check fails, the field is set to the fallback (`null`) and the reason is logged — downstream code never sees an unverified number.
+# If any check fails, the field is set to the fallback and the reason is logged, so downstream code never sees an unverified number. The fallback is `None` in memory, which keeps it out of the plots, and `-1.0` in the saved `core_indicators.json`, which keeps every field a strict float as the schema requires. The fallback fields are also listed explicitly.
 #
-# **Human gold standard.** I verified each indicator manually against the PDF; page numbers are given so the marker can re-check them. Accuracy = |extracted − gold| ≤ tolerance.
+# **Human gold standard.** I verified each indicator manually against the PDF; page numbers are given so the marker can re-check them. Accuracy = |extracted − gold| ≤ tolerance. A gold value of `None` means *the report does not state this value*: the correct behaviour is then to return `null` (a fallback), and any number is counted as wrong.
+#
+# **Expected fallback (domain note).** The 2024 report states only that the Bank of Canada "began lowering its policy rate in June" (2024) and that real policy rates were "in the 1¼–2 percent range". The *level* of the policy rate (4.75% after the 5 June 2024 cut) never appears in the text: it is shown only in a chart (Figure 6, which is an image). A model that outputs 4.75 or 5.0 is using memorised outside knowledge, not the document.
 
 # %%
 HUMAN_GOLD = {   # value, PDF page, source location — manually verified against the report
-    "gdp_growth_forecast_pct":      (1.6,  45, "Table 1, Real GDP, 2026 (proj.)"),
-    "headline_inflation_rate_pct":  (2.0,  45, "Table 1, CPI inflation (average), 2025"),
-    "central_bank_policy_rate_pct": (2.25, 11, "¶6: 'reduced the policy rate to 2¼ percent in October'"),
-    "non_performing_loan_ratio":    (0.7,  49, "Table 5, NPLs to gross loans, 2025 (text ¶10 says 'below 0.6 percent')"),
-    "unemployment_rate_pct":        (6.8,  45, "Table 1, Unemployment rate (average), 2025"),
-    "tier_1_capital_ratio":         (15.4, 49, "Table 5, Tier 1 ratio, 2025"),
+    "gdp_growth_forecast_pct":      (1.3,  4,  "Press-release table 'Selected Economic Indicators', Real GDP, 2024 (proj.)"),
+    "headline_inflation_rate_pct":  (2.5,  4,  "Same table, CPI inflation (average), 2024 (text ¶5: 2.9% y/y in May 2024 is a monthly reading)"),
+    "central_bank_policy_rate_pct": (None, 9,  "Level not stated: ¶9 says only that the BoC began lowering rates in June; level appears only in Figure 6 (image)"),
+    "non_performing_loan_ratio":    (0.5,  40, "Table 7 Financial Soundness Indicators, NPLs to gross loans, 2023"),
+    "unemployment_rate_pct":        (6.2,  4,  "Same table, Unemployment rate (average), 2024 (proj.)"),
+    "tier_1_capital_ratio":         (15.2, 40, "Table 7, Tier 1 ratio, 2023"),
 }
 GOLD_TOL = 0.051
+
+def matches_gold(value: Optional[float], gold: Optional[float]) -> bool:
+    if gold is None:
+        return value is None                     # correct behaviour = fallback
+    return value is not None and not (isinstance(value, float) and math.isnan(value)) and abs(value - gold) <= GOLD_TOL
 
 def number_in_text(value: float, text: str) -> bool:
     if text is None:
@@ -1224,7 +1285,8 @@ def verify_and_fallback(run: dict) -> pd.DataFrame:
         rows.append({"config": run["config"], "field": f, "extracted": v, "final": final,
                      "fallback": bool(reasons), "fallback_reason": "; ".join(reasons) or None,
                      "period": rich.get("reference_period"), "gold": gold,
-                     "correct": (final is not None and abs(final - gold) <= GOLD_TOL)})
+                     "raw_correct": matches_gold(v, gold),          # what the model said
+                     "correct": matches_gold(final, gold)})         # after verification + fallback
     return pd.DataFrame(rows)
 
 VERIFY = pd.concat([verify_and_fallback(r) for r in IND_RUNS.values()], ignore_index=True)
@@ -1274,7 +1336,8 @@ BENCH = pd.DataFrame([{
     "config": c, "model": r["model"],
     "json_valid": r["diag"].get("json_valid", False),
     "schema_compliant": bool(r["diag"].get("keys_exact") and r["diag"].get("types_exact")),
-    "accuracy_vs_gold_pct": 100 * VERIFY[VERIFY.config == c].correct.mean(),
+    "raw_accuracy_vs_gold_pct": 100 * VERIFY[VERIFY.config == c].raw_correct.mean(),   # before verification
+    "accuracy_vs_gold_pct": 100 * VERIFY[VERIFY.config == c].correct.mean(),           # after verification + fallback
     "fields_extracted_pct": 100 * VERIFY[VERIFY.config == c].extracted.notna().mean(),
     "judge_factual_accuracy": IND_AUDITS[c].factual_accuracy if IND_AUDITS[c] else np.nan,
     "judge_schema_compliance": IND_AUDITS[c].schema_compliance if IND_AUDITS[c] else np.nan,
@@ -1288,9 +1351,16 @@ best = IND_RUNS["A_strict_extractor"]
 final_flat = {"country_name": CFG.country,
               **{f: VERIFY[(VERIFY.config == "A_strict_extractor") & (VERIFY.field == f)].final.iloc[0] for f in INDICATOR_FIELDS}}
 final_flat = {k: (None if isinstance(v, float) and math.isnan(v) else v) for k, v in final_flat.items()}
-FlatIndicators.model_validate(final_flat)          # the saved file is guaranteed to match the target schema
-save_json(final_flat, "core_indicators.json")
-save_json({"final_indicators": final_flat,
+# Saved file: every field is a float, as the target schema requires. Fields that failed extraction or
+# verification get the sentinel -1.0 (impossible for these ratios), and are listed in `fallback_fields`
+# so no consumer can mistake the sentinel for data. In memory we keep None so plots never draw -1.0.
+fallback_fields = [k for k, v in final_flat.items() if v is None]
+saved_flat = {k: (CFG.json_fallback_value if v is None else float(v) if k != "country_name" else v)
+              for k, v in final_flat.items()}
+FlatIndicators.model_validate(saved_flat)          # the saved file is guaranteed to match the target schema
+save_json(saved_flat, "core_indicators.json")
+save_json({"final_indicators": saved_flat, "fallback_fields": fallback_fields,
+           "fallback_value_meaning": f"{CFG.json_fallback_value} = not stated in the report / failed verification",
            "evidence": best["rich"],
            "human_gold": {k: {"value": v[0], "pdf_page": v[1], "location": v[2]} for k, v in HUMAN_GOLD.items()},
            "verification": VERIFY.to_dict(orient="records"),
@@ -1298,7 +1368,7 @@ save_json({"final_indicators": final_flat,
            "benchmark": BENCH.to_dict(orient="records"),
            "judge_audits": {c: (a.model_dump() if a else None) for c, a in IND_AUDITS.items()},
            "retrieved_context_chunks": [h["cid"] for h in IND_HITS]}, "task2_indicators_audit.json")
-print(json.dumps(final_flat, indent=2))
+print(json.dumps(saved_flat, indent=2), "\nFallback fields:", fallback_fields)
 
 # %% [markdown]
 # ### 2.6 Temporal trend identification
@@ -1425,7 +1495,7 @@ print(sorted(p.name for p in OUT_DIR.glob("*.json")))
 # %%
 RAG_QUESTIONS = [
     "What does the IMF say about bank capital buffers, such as the Domestic Stability Buffer, and should they be changed?",
-    "What did the FSAP stress tests assume and conclude about the resilience of banks and nonbank financial institutions?",
+    "What do stress tests and risk analyses say about the resilience of banks and nonbank financial institutions, including bank–NBFI linkages?",
     "When is inflation expected to be at the 2 percent target, and what monetary policy stance does the IMF recommend?",
     "What risks do household debt and mortgage renewals pose to financial stability?",
 ]
@@ -1441,7 +1511,7 @@ def closed_book_answers(questions: List[str]) -> Dict[int, str]:
     """Baseline without retrieval. Batched in one call: there is no context that could leak between questions."""
     listing = "\n".join(f"{i}: {q}" for i, q in enumerate(questions))
     obj, _, _ = LLM.generate_structured(
-        f"Answer each question about the IMF's 2025 Article IV consultation with {CFG.country} ({CFG.report_id}) "
+        f"Answer each question about the IMF's {CFG.consultation_year} Article IV consultation with {CFG.country} ({CFG.report_id}) "
         f"from your own knowledge, at most 120 words each.\n{listing}", EXTRACTOR, "rag_closed_book", ClosedBookSet)
     return {a.question_id: a.answer for a in obj.answers} if obj else {}
 
@@ -1555,7 +1625,7 @@ TREND_TIDY = TREND_TIDY.merge(TREND_LONG[["series", "year", "projected"]], on=["
 
 # (c) benchmark metrics (wide) -> long
 BENCH_LONG = pd.melt(BENCH, id_vars=["config", "model"],
-                     value_vars=["accuracy_vs_gold_pct", "fields_extracted_pct", "judge_human_agreement_pct"],
+                     value_vars=["raw_accuracy_vs_gold_pct", "accuracy_vs_gold_pct", "judge_human_agreement_pct"],
                      var_name="metric", value_name="value")
 
 # (d) RAG judge scores (wide) -> long
@@ -1607,8 +1677,10 @@ def plot_trends(ax):
             joined = pd.concat([hist.tail(1), proj])
             ax.plot(joined.year, joined.value, color=col, lw=2, ls="--", marker="o", ms=3, mfc="white")
     ax.axhline(2.0, color=MUTED, lw=1, ls=":")
-    ax.scatter([CFG.first_projection_year], [final_flat["central_bank_policy_rate_pct"] or np.nan], marker="D", s=50,
-               color=PALETTE[7], zorder=5, label=f"BoC policy rate, Oct-2025 ({final_flat['central_bank_policy_rate_pct']}%)")
+    pol = final_flat["central_bank_policy_rate_pct"]
+    if pol is not None:   # only plotted when the report states the level (otherwise it is a documented fallback)
+        ax.scatter([CFG.consultation_year], [pol], marker="D", s=50, color=PALETTE[7], zorder=5,
+                   label=f"Policy rate stated in report ({pol}%)")
     x0, x1 = ax.get_xlim()
     ax.axvspan(CFG.first_projection_year - 0.5, x1, color="#f3f2ee", zorder=0)
     ax.set_xlim(x0, x1)
@@ -1620,8 +1692,8 @@ def plot_trends(ax):
     ax.legend(fontsize=7.5, loc="upper center", bbox_to_anchor=(0.5, -0.08), ncol=3)   # below the plot: never covers data
 
 def plot_benchmark(ax):
-    metrics = ["accuracy_vs_gold_pct", "fields_extracted_pct", "judge_human_agreement_pct"]
-    nice = {"accuracy_vs_gold_pct": "Accuracy vs\nhuman gold", "fields_extracted_pct": "Fields\nextracted",
+    metrics = ["raw_accuracy_vs_gold_pct", "accuracy_vs_gold_pct", "judge_human_agreement_pct"]
+    nice = {"raw_accuracy_vs_gold_pct": "Raw model\naccuracy", "accuracy_vs_gold_pct": "Accuracy after\nverification",
             "judge_human_agreement_pct": "Judge–human\nagreement"}
     w = 0.26
     for i, c in enumerate(CONFIGS):
@@ -1693,9 +1765,10 @@ def executive_overlay() -> str:
     top_theme = theme_df.sort_values("per_1000_words").theme.iloc[-1]
     acc = BENCH.set_index("config").accuracy_vs_gold_pct
     rag = rag_summary["faithfulness"] if "faithfulness" in rag_summary else pd.Series(dtype=float)
-    return (f"{CFG.country.upper()} — {CFG.report_id}  |  GDP growth 2026 (proj.): {fmt(fl['gdp_growth_forecast_pct'])}  ·  "
-            f"CPI 2025: {fmt(fl['headline_inflation_rate_pct'])}  ·  Policy rate: {fmt(fl['central_bank_policy_rate_pct'])}  ·  "
-            f"Unemployment 2025: {fmt(fl['unemployment_rate_pct'])}  ·  NPL ratio: {fmt(fl['non_performing_loan_ratio'])}  ·  "
+    cy = CFG.consultation_year
+    return (f"{CFG.country.upper()} — {CFG.report_id}  |  GDP growth {cy} (proj.): {fmt(fl['gdp_growth_forecast_pct'])}  ·  "
+            f"CPI {cy} (avg.): {fmt(fl['headline_inflation_rate_pct'])}  ·  Policy rate: {fmt(fl['central_bank_policy_rate_pct'])}  ·  "
+            f"Unemployment {cy}: {fmt(fl['unemployment_rate_pct'])}  ·  NPL ratio: {fmt(fl['non_performing_loan_ratio'])}  ·  "
             f"Tier 1: {fmt(fl['tier_1_capital_ratio'])}\n"
             f"Densest theme: {top_theme}.  Extraction accuracy vs human gold: strict {acc.get('A_strict_extractor', np.nan):.0f}% · "
             f"lite {acc.get('B_strict_challenger', np.nan):.0f}% · generic {acc.get('C_generic_prompt', np.nan):.0f}%.  "
@@ -1705,7 +1778,7 @@ def executive_overlay() -> str:
 fig = plt.figure(figsize=(20, 12.5))
 gs = fig.add_gridspec(3, 3, height_ratios=[0.11, 1, 1], hspace=0.5, wspace=0.42)
 hdr = fig.add_subplot(gs[0, :]); hdr.axis("off")
-hdr.text(0, 0.95, f"IMF Article IV Dashboard — {CFG.country} (2025 consultation): macro-financial indicators & LLM pipeline diagnostics",
+hdr.text(0, 0.95, f"IMF Article IV Dashboard — {CFG.country} ({CFG.consultation_year} consultation): macro-financial indicators & LLM pipeline diagnostics",
          fontsize=17, fontweight="bold", va="top", color=INK)
 hdr.text(0, 0.38, executive_overlay(), fontsize=10.5, va="top", color=MUTED, linespacing=1.6)
 for (name, fn), pos in zip(PANELS, [(1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]):
