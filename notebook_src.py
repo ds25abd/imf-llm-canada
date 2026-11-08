@@ -33,7 +33,7 @@ import os, sys, subprocess, importlib
 IN_COLAB = "google.colab" in sys.modules
 
 REQUIRED = {  # import name -> pip name
-    "pypdf": "pypdf>=4.0",
+    "pypdf": "pypdf==7.0.0",   # pinned: identical text extraction => identical prompts => committed cache hits
     "faiss": "faiss-cpu>=1.8",
     "sentence_transformers": "sentence-transformers>=3.0",
     "google.genai": "google-genai>=1.30",
@@ -48,6 +48,12 @@ def ensure_packages(packages: dict) -> None:
             importlib.import_module(mod)
         except ImportError:
             missing.append(pip_name)
+    try:
+        import pypdf
+        if pypdf.__version__ != "7.0.0":
+            missing.append(packages["pypdf"])
+    except ImportError:
+        pass
     if missing:
         print("Installing:", missing)
         subprocess.check_call([sys.executable, "-m", "pip", "install", "-q", *missing])

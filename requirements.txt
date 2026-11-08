@@ -1,4 +1,4 @@
-pypdf>=4.0
+pypdf==7.0.0
 google-genai>=1.30
 pydantic>=2.6
 sentence-transformers>=3.0
