@@ -1,0 +1,376 @@
+{
+  "questions": [
+    {
+      "question": "What does the IMF say about bank capital buffers, such as the Domestic Stability Buffer, and should they be changed?",
+      "variants": [
+        "IMF assessment of bank capital buffers and Domestic Stability Buffer adjustments",
+        "recommendations on macroprudential policy and capital buffer calibration",
+        "evaluating the adequacy of bank capital requirements and countercyclical buffers",
+        "IMF views on releasing or tightening the Domestic Stability Buffer"
+      ],
+      "single_chunks": [
+        [
+          "C103",
+          0.573
+        ],
+        [
+          "C086",
+          0.585
+        ],
+        [
+          "C159",
+          0.596
+        ],
+        [
+          "C080",
+          0.613
+        ],
+        [
+          "C028",
+          0.622
+        ]
+      ],
+      "multi_chunks": [
+        "C086",
+        "C028",
+        "C173",
+        "C103",
+        "C085",
+        "C080",
+        "C017",
+        "C159"
+      ],
+      "new_chunks_from_multi": [
+        "C017",
+        "C085",
+        "C173"
+      ],
+      "answers": {
+        "closed_book": "The IMF supported OSFI's decision to maintain the Domestic Stability Buffer (DSB) at 3.5 percent, viewing capital buffers as appropriate for current risks. The capital framework provides adequate protection against potential credit and market shocks. The IMF recommended keeping the DSB at its current level while standing ready to release it if systemic stress materializes, allowing banks to absorb losses and maintain lending.",
+        "single_query_rag": "The IMF states that if a scenario of lower global demand and increased geo-fragmentation is compounded by signs of a significant contraction in credit, loosening macroprudential policies could be considered [C028]. Specifically, a reduction in the domestic stability buffer applied to large banks could be considered under such conditions to support credit growth and prevent adverse feedback loops that could further depress economic activity [C028].",
+        "multi_query_rag": "The IMF states that if a scenario of lower global demand, increased geo-fragmentation, and supply-side shocks is compounded by signs of a significant credit contraction, authorities could consider loosening macroprudential policies [C028]. Specifically, reducing the domestic stability buffer applied to large banks could be considered to support credit growth and prevent adverse feedback loops that could further depress economic activity [C028]."
+      },
+      "blind_labels": {
+        "A": "single_query_rag",
+        "B": "closed_book",
+        "C": "multi_query_rag"
+      }
+    },
+    {
+      "question": "What do stress tests and risk analyses say about the resilience of banks and nonbank financial institutions, including bank–NBFI linkages?",
+      "variants": [
+        "financial sector assessment program stress tests and banking system resilience",
+        "nonbank financial intermediation risks and bank-NBFI interconnectedness",
+        "systemic risk analysis and liquidity stress testing of financial institutions",
+        "IMF evaluation of vulnerabilities in the banking and nonbank financial sectors"
+      ],
+      "single_chunks": [
+        [
+          "C106",
+          0.438
+        ],
+        [
+          "C105",
+          0.487
+        ],
+        [
+          "C017",
+          0.49
+        ],
+        [
+          "C099",
+          0.536
+        ],
+        [
+          "C016",
+          0.541
+        ]
+      ],
+      "multi_chunks": [
+        "C106",
+        "C017",
+        "C105",
+        "C016",
+        "C099",
+        "C067",
+        "C068",
+        "C086"
+      ],
+      "new_chunks_from_multi": [
+        "C067",
+        "C068",
+        "C086"
+      ],
+      "answers": {
+        "closed_book": "IMF stress tests show that Canadian banks remain resilient, maintaining capital ratios well above regulatory minimums even under severe adverse macroeconomic scenarios. Nonbank financial institutions (NBFIs) also show general resilience, though risks persist around liquidity management. Bank-NBFI linkages, including wholesale funding and credit exposures, require close monitoring, but direct contagion risks are currently assessed as manageable.",
+        "single_query_rag": "The nonbank sector appears healthy, though showing signs of increasing leverage and reliance on less liquid investments, repo financing, and derivative hedging that could expose institutions to liquidity squeezes [C017]. NBFIs have weathered recent volatility relatively well [C017]. Banking sector stress remains contained, with bank profitability dented only moderately [C016].\n\nRegarding bank–NBFI linkages, tests show reciprocal influence between banks and NBFIs increases during stress episodes, pointing to an increasing influence of NBFIs on banks in recent years [C106]. Evidence suggests their interaction could act as a shock amplifier in stressed market conditions, as the potential influence of NBFIs on banks might be increasing, particularly under stress [C106].",
+        "multi_query_rag": "Current stress in Canada's banking sector appears contained, although bank profitability has been moderately dented by higher loan loss provisioning [C016]. \n\nThe nonbank financial institution (NBFI) sector also appears healthy and has weathered recent bouts of volatility relatively well [C017]. However, NBFIs exhibit increasing leverage and shifts toward less liquid investments, exposing some to potential liquidity squeezes from margin calls and repo financing [C017]. \n\nRegarding linkages, asset co-movement and reciprocal influence between banks and NBFIs spike during stress episodes [C105, C106]. Granger-causality tests indicate NBFIs exert an increasing influence on banks—especially under stress—which could act as a shock amplifier in stressed market conditions, warranting heightened scrutiny of large nonbank players [C106]."
+      },
+      "blind_labels": {
+        "A": "multi_query_rag",
+        "B": "single_query_rag",
+        "C": "closed_book"
+      }
+    },
+    {
+      "question": "When is inflation expected to be at the 2 percent target, and what monetary policy stance does the IMF recommend?",
+      "variants": [
+        "inflation forecast horizon and convergence to the 2 percent medium-term target",
+        "monetary policy stance and central bank policy rate recommendations",
+        "IMF projections for price stability and disinflation trajectory",
+        "assessment of monetary tightening and policy rate path to achieve inflation target"
+      ],
+      "single_chunks": [
+        [
+          "C019",
+          0.551
+        ],
+        [
+          "C027",
+          0.589
+        ],
+        [
+          "C018",
+          0.615
+        ],
+        [
+          "C028",
+          0.616
+        ],
+        [
+          "C000",
+          0.623
+        ]
+      ],
+      "multi_chunks": [
+        "C028",
+        "C019",
+        "C027",
+        "C018",
+        "C073",
+        "C074",
+        "C023",
+        "C000"
+      ],
+      "new_chunks_from_multi": [
+        "C023",
+        "C073",
+        "C074"
+      ],
+      "answers": {
+        "closed_book": "Inflation is expected to return to the Bank of Canada's 2 percent target by late 2024 or early 2025. The IMF recommended maintaining a restrictive monetary policy stance until inflation is decisively on a path toward the target. Once sustained disinflation is confirmed, the Bank of Canada should gradually ease policy interest rates in a data-dependent manner.",
+        "single_query_rag": "Inflation is projected to return to the 2 percent target by early 2025 [C000, C018, C019]. \n\nRegarding the monetary policy stance, IMF Executive Directors welcomed the Bank of Canada’s decision to begin lowering policy rates in June [C000] as monetary policy gradually moves toward a neutral stance [C018]. Additionally, the IMF notes that policy settings should adjust if risks materialize: if inflation proves stickier than expected, monetary easing might need to be delayed, and monetary policy would need to act cautiously if supply-side shocks lead to higher inflationary pressures [C027].",
+        "multi_query_rag": "Inflation is projected to reach the 2 percent target by early 2025 [C000, C018, C019]. \n\nRegarding monetary policy, the IMF supports gradually normalizing monetary policy toward a neutral stance, welcoming the Bank of Canada's decision to begin lowering policy rates in June [C000, C018, C019]. However, the IMF notes that if inflation proves stickier than expected or supply-side shocks emerge, monetary easing may need to be delayed or approached cautiously [C027, C028]. The IMF also recommends enhancing policy communications by providing additional details on the likely evolution of policy rates [C023]."
+      },
+      "blind_labels": {
+        "A": "single_query_rag",
+        "B": "multi_query_rag",
+        "C": "closed_book"
+      }
+    },
+    {
+      "question": "What risks do household debt and mortgage renewals pose to financial stability?",
+      "variants": [
+        "household indebtedness vulnerabilities and mortgage refinancing risks",
+        "impact of high debt service burdens and housing market corrections on financial stability",
+        "mortgage renewal cliffs and household balance sheet resilience",
+        "IMF analysis of property market risks and leveraged household vulnerability"
+      ],
+      "single_chunks": [
+        [
+          "C086",
+          0.569
+        ],
+        [
+          "C015",
+          0.588
+        ],
+        [
+          "C080",
+          0.595
+        ],
+        [
+          "C103",
+          0.608
+        ],
+        [
+          "C016",
+          0.61
+        ]
+      ],
+      "multi_chunks": [
+        "C086",
+        "C016",
+        "C080",
+        "C085",
+        "C015",
+        "C149",
+        "C103",
+        "C084"
+      ],
+      "new_chunks_from_multi": [
+        "C084",
+        "C085",
+        "C149"
+      ],
+      "answers": {
+        "closed_book": "Elevated household debt and upcoming mortgage renewals at significantly higher interest rates increase debt-service burdens, reducing disposable income and elevating default risks for vulnerable borrowers. However, systemic risks to financial stability remain contained. Canadian banks possess strong capital cushions, underwriting standards are robust due to mortgage stress testing, and strong labor market conditions help mitigate systemic spillovers.",
+        "single_query_rag": "As loans reprice, elevated mortgage rates will increase payments for some households [C080]. If house price corrections occur alongside a material rise in unemployment, delinquencies on household loans could increase [C080]. This poses risks to financial stability by potentially resulting in credit losses and reduced capital for banks [C080]. Additionally, if monetary easing and interest rate declines are substantially delayed, both households and lenders may face strains, and financial stresses could expand to a broader range of borrowers [C080, C016].",
+        "multi_query_rag": "Rising mortgage rates and loan repricing increase household mortgage payments [C080, C015]. If monetary easing is delayed, both households and lenders face financial strains [C080]. Increased payments alongside house price corrections can weaken household consumption through a wealth effect [C080]. Furthermore, if unemployment rises materially, higher house price declines could drive up delinquencies on household loans, leading to credit losses and reduced capital for banks [C080]. Despite these risks, the financial sector is expected to remain resilient in the baseline due to prudent mortgage underwriting and the nature of existing mortgage products [C080]."
+      },
+      "blind_labels": {
+        "A": "single_query_rag",
+        "B": "multi_query_rag",
+        "C": "closed_book"
+      }
+    }
+  ],
+  "scores": [
+    {
+      "q": 0,
+      "system": "single_query_rag",
+      "faithfulness": 5,
+      "completeness": 5,
+      "relevance": 5,
+      "unsupported_claims": [],
+      "n_unsupported": 0
+    },
+    {
+      "q": 0,
+      "system": "closed_book",
+      "faithfulness": 1,
+      "completeness": 1,
+      "relevance": 4,
+      "unsupported_claims": [
+        "The IMF supported OSFI's decision to maintain the Domestic Stability Buffer (DSB) at 3.5 percent.",
+        "The IMF viewed capital buffers as appropriate for current risks.",
+        "The capital framework provides adequate protection against potential credit and market shocks.",
+        "The IMF recommended keeping the DSB at its current level while standing ready to release it if systemic stress materializes, allowing banks to absorb losses and maintain lending."
+      ],
+      "n_unsupported": 4
+    },
+    {
+      "q": 0,
+      "system": "multi_query_rag",
+      "faithfulness": 5,
+      "completeness": 5,
+      "relevance": 5,
+      "unsupported_claims": [],
+      "n_unsupported": 0
+    },
+    {
+      "q": 1,
+      "system": "multi_query_rag",
+      "faithfulness": 5,
+      "completeness": 5,
+      "relevance": 5,
+      "unsupported_claims": [],
+      "n_unsupported": 0
+    },
+    {
+      "q": 1,
+      "system": "single_query_rag",
+      "faithfulness": 5,
+      "completeness": 5,
+      "relevance": 5,
+      "unsupported_claims": [],
+      "n_unsupported": 0
+    },
+    {
+      "q": 1,
+      "system": "closed_book",
+      "faithfulness": 1,
+      "completeness": 2,
+      "relevance": 4,
+      "unsupported_claims": [
+        "IMF stress tests show that Canadian banks remain resilient, maintaining capital ratios well above regulatory minimums even under severe adverse macroeconomic scenarios.",
+        "Bank-NBFI linkages, including wholesale funding and credit exposures, require close monitoring, but direct contagion risks are currently assessed as manageable."
+      ],
+      "n_unsupported": 2
+    },
+    {
+      "q": 2,
+      "system": "single_query_rag",
+      "faithfulness": 5,
+      "completeness": 5,
+      "relevance": 5,
+      "unsupported_claims": [],
+      "n_unsupported": 0
+    },
+    {
+      "q": 2,
+      "system": "multi_query_rag",
+      "faithfulness": 5,
+      "completeness": 5,
+      "relevance": 5,
+      "unsupported_claims": [],
+      "n_unsupported": 0
+    },
+    {
+      "q": 2,
+      "system": "closed_book",
+      "faithfulness": 2,
+      "completeness": 2,
+      "relevance": 4,
+      "unsupported_claims": [
+        "Inflation is expected to return to the 2 percent target by 'late 2024' (the evidence specifies 'early 2025').",
+        "The IMF recommended maintaining a restrictive monetary policy stance until inflation is decisively on a path toward the target.",
+        "The Bank of Canada should gradually ease policy interest rates once sustained disinflation is confirmed (the evidence states the BoC had already begun lowering rates in June, which the IMF welcomed)."
+      ],
+      "n_unsupported": 3
+    },
+    {
+      "q": 3,
+      "system": "single_query_rag",
+      "faithfulness": 5,
+      "completeness": 4,
+      "relevance": 5,
+      "unsupported_claims": [],
+      "n_unsupported": 0
+    },
+    {
+      "q": 3,
+      "system": "multi_query_rag",
+      "faithfulness": 5,
+      "completeness": 5,
+      "relevance": 5,
+      "unsupported_claims": [],
+      "n_unsupported": 0
+    },
+    {
+      "q": 3,
+      "system": "closed_book",
+      "faithfulness": 3,
+      "completeness": 3,
+      "relevance": 4,
+      "unsupported_claims": [
+        "Underwriting standards are robust due to mortgage stress testing.",
+        "Strong labor market conditions help mitigate systemic spillovers."
+      ],
+      "n_unsupported": 2
+    }
+  ],
+  "summary": [
+    {
+      "system": "closed_book",
+      "faithfulness": 1.75,
+      "completeness": 2.0,
+      "relevance": 4.0,
+      "n_unsupported": 2.75
+    },
+    {
+      "system": "multi_query_rag",
+      "faithfulness": 5.0,
+      "completeness": 5.0,
+      "relevance": 5.0,
+      "n_unsupported": 0.0
+    },
+    {
+      "system": "single_query_rag",
+      "faithfulness": 5.0,
+      "completeness": 4.75,
+      "relevance": 5.0,
+      "n_unsupported": 0.0
+    }
+  ]
+}

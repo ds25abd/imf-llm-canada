@@ -339,7 +339,11 @@ class GeminiLLM:
                 if code == 429 and "PerDay" in msg:
                     raise RuntimeError(f"[{task}] daily free-tier quota for {model} is used up. Re-run later: every "
                                        "completed call is cached, so the run resumes where it stopped.") from e
-                if code in (429, 500, 502, 503, 504) or "RESOURCE_EXHAUSTED" in msg:
+                # transient: rate limits, server errors, and dropped connections (httpx RemoteProtocolError,
+                # timeouts) that carry no HTTP status code
+                network = type(e).__name__ in ("RemoteProtocolError", "ConnectError", "ReadTimeout", "ReadError",
+                                               "WriteError", "ConnectTimeout", "TimeoutException")
+                if code in (429, 500, 502, 503, 504) or "RESOURCE_EXHAUSTED" in msg or network:
                     m = re.search(r"retry in ([\d.]+)s", msg)
                     delay = float(m.group(1)) + 1 if m else min(60, 5 * 2 ** attempt)
                     print(f"   [{task}] {code} – retrying in {delay:.0f}s (attempt {attempt+1})")
@@ -1684,9 +1688,14 @@ def plot_trends(ax):
     x0, x1 = ax.get_xlim()
     ax.axvspan(CFG.first_projection_year - 0.5, x1, color="#f3f2ee", zorder=0)
     ax.set_xlim(x0, x1)
-    ax.set_ylim(0, ax.get_ylim()[1] * 1.08)
+    y0, y1 = ax.get_ylim()
+    y0 = min(0, y0)                                  # keep negative values (e.g. 2020 GDP -5.0%) fully visible
+    ax.set_ylim(y0, y1 * 1.08)
+    if y0 < 0:
+        ax.axhline(0, color=MUTED, lw=0.8)
     ax.text(x1 - 0.1, 2.1, "2% inflation target", fontsize=8, color=MUTED, ha="right", va="bottom")
-    ax.text(CFG.first_projection_year - 0.35, 0.3, "IMF projections (dashed)", fontsize=8, color=MUTED)
+    ax.text(CFG.first_projection_year - 0.35, y1 * 1.08 - 0.6, "IMF projections (dashed)", fontsize=8,
+            color=MUTED, va="top")
     ax.set_ylabel("Percent")
     ax.set_title("Inflation, growth, unemployment & credit: history and projections")
     ax.legend(fontsize=7.5, loc="upper center", bbox_to_anchor=(0.5, -0.08), ncol=3)   # below the plot: never covers data
@@ -1714,8 +1723,13 @@ def plot_credit_npl(ax):
     both = pd.concat({"credit": hh, "npl": npl}, axis=1).dropna()
     ax.plot(both.credit, both.npl, color=MUTED, lw=1, zorder=1)
     ax.scatter(both.credit, both.npl, s=70, color=PALETTE[0], edgecolor="white", linewidth=1.5, zorder=2)
+    placed = []
     for yr, r in both.iterrows():
-        ax.annotate(str(yr), (r.credit, r.npl), xytext=(6, 4), textcoords="offset points", fontsize=8, color=INK)
+        # if another labelled point is close by, put this label below-left instead of above-right
+        near = any(abs(r.credit - px) < 0.6 and abs(r.npl - py) < 0.03 for px, py in placed)
+        ax.annotate(str(yr), (r.credit, r.npl), xytext=(-30, -13) if near else (6, 4),
+                    textcoords="offset points", fontsize=8, color=INK)
+        placed.append((r.credit, r.npl))
     ax.set_xlabel("Household credit growth (%, annual avg.)")
     ax.set_ylabel("NPLs to gross loans (%)")
     ax.set_title("Credit cycle vs asset quality")

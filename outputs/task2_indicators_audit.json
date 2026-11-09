@@ -1,0 +1,574 @@
+{
+  "final_indicators": {
+    "country_name": "Canada",
+    "gdp_growth_forecast_pct": 1.3,
+    "headline_inflation_rate_pct": 2.5,
+    "central_bank_policy_rate_pct": -1.0,
+    "non_performing_loan_ratio": 0.5,
+    "unemployment_rate_pct": 6.2,
+    "tier_1_capital_ratio": 15.2
+  },
+  "fallback_fields": [
+    "central_bank_policy_rate_pct"
+  ],
+  "fallback_value_meaning": "-1.0 = not stated in the report / failed verification",
+  "evidence": {
+    "country_name": "Canada",
+    "gdp_growth_forecast_pct": {
+      "value": 1.3,
+      "reference_period": "2024",
+      "evidence_quote": "Real GDP -5.0 5.3 3.8 1.2 1.3 2.4 2.0 1.8 1.8 1.6",
+      "chunk_id": "C003"
+    },
+    "headline_inflation_rate_pct": {
+      "value": 2.5,
+      "reference_period": "2024",
+      "evidence_quote": "CPI inflation (average) 0.7 3.4 6.8 3.9 2.5 2.0 2.0 2.0 2.0 2.0",
+      "chunk_id": "C004"
+    },
+    "central_bank_policy_rate_pct": {
+      "value": null,
+      "reference_period": null,
+      "evidence_quote": null,
+      "chunk_id": null
+    },
+    "non_performing_loan_ratio": {
+      "value": 0.5,
+      "reference_period": "2023",
+      "evidence_quote": "NPLs to Gross Loans 0.5 0.4 0.3 0.5",
+      "chunk_id": "C048"
+    },
+    "unemployment_rate_pct": {
+      "value": 6.2,
+      "reference_period": "2024",
+      "evidence_quote": "Unemployment rate (average) 2/ 9.7 7.5 5.3 5.4 6.2 6.3 6.0 6.0 6.0 6.0",
+      "chunk_id": "C003"
+    },
+    "tier_1_capital_ratio": {
+      "value": 15.2,
+      "reference_period": "2023",
+      "evidence_quote": "Tier 1 ratio 13.9 15.1 15.3 15.2",
+      "chunk_id": "C048"
+    }
+  },
+  "human_gold": {
+    "gdp_growth_forecast_pct": {
+      "value": 1.3,
+      "pdf_page": 4,
+      "location": "Press-release table 'Selected Economic Indicators', Real GDP, 2024 (proj.)"
+    },
+    "headline_inflation_rate_pct": {
+      "value": 2.5,
+      "pdf_page": 4,
+      "location": "Same table, CPI inflation (average), 2024 (text ¶5: 2.9% y/y in May 2024 is a monthly reading)"
+    },
+    "central_bank_policy_rate_pct": {
+      "value": null,
+      "pdf_page": 9,
+      "location": "Level not stated: ¶9 says only that the BoC began lowering rates in June; level appears only in Figure 6 (image)"
+    },
+    "non_performing_loan_ratio": {
+      "value": 0.5,
+      "pdf_page": 40,
+      "location": "Table 7 Financial Soundness Indicators, NPLs to gross loans, 2023"
+    },
+    "unemployment_rate_pct": {
+      "value": 6.2,
+      "pdf_page": 4,
+      "location": "Same table, Unemployment rate (average), 2024 (proj.)"
+    },
+    "tier_1_capital_ratio": {
+      "value": 15.2,
+      "pdf_page": 40,
+      "location": "Table 7, Tier 1 ratio, 2023"
+    }
+  },
+  "verification": [
+    {
+      "config": "A_strict_extractor",
+      "field": "gdp_growth_forecast_pct",
+      "extracted": 1.3,
+      "final": 1.3,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2024",
+      "gold": 1.3,
+      "raw_correct": true,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Accurately extracted 1.3 percent for 2024 from the Selected Economic Indicators table (C003).",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "A_strict_extractor",
+      "field": "headline_inflation_rate_pct",
+      "extracted": 2.5,
+      "final": 2.5,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2024",
+      "gold": 2.5,
+      "raw_correct": true,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Accurately extracted 2.5 percent for 2024 CPI inflation (average) from the Selected Economic Indicators table (C004).",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "A_strict_extractor",
+      "field": "central_bank_policy_rate_pct",
+      "extracted": NaN,
+      "final": NaN,
+      "fallback": true,
+      "fallback_reason": "not extracted (null)",
+      "period": null,
+      "gold": NaN,
+      "raw_correct": true,
+      "correct": true,
+      "judge_verdict": "correctly_null",
+      "judge_comment": "The text only mentions that the Bank of Canada began lowering rates in June and discusses real policy rate ranges, but does not state the nominal policy rate level.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "A_strict_extractor",
+      "field": "non_performing_loan_ratio",
+      "extracted": 0.5,
+      "final": 0.5,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2023",
+      "gold": 0.5,
+      "raw_correct": true,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Accurately extracted 0.5 percent for 2023 (latest year available) from Table 7 (C048).",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "A_strict_extractor",
+      "field": "unemployment_rate_pct",
+      "extracted": 6.2,
+      "final": 6.2,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2024",
+      "gold": 6.2,
+      "raw_correct": true,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Accurately extracted 6.2 percent for 2024 from the Selected Economic Indicators table (C003/C004).",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "A_strict_extractor",
+      "field": "tier_1_capital_ratio",
+      "extracted": 15.2,
+      "final": 15.2,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2023",
+      "gold": 15.2,
+      "raw_correct": true,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Accurately extracted 15.2 percent for 2023 (latest year available) from Table 7 (C048).",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "B_strict_challenger",
+      "field": "gdp_growth_forecast_pct",
+      "extracted": 1.3,
+      "final": 1.3,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2024",
+      "gold": 1.3,
+      "raw_correct": true,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "1.3 percent is the projected real GDP growth rate for 2024, confirmed in both the Selected Economic Indicators table (C003) and the text (C018).",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "B_strict_challenger",
+      "field": "headline_inflation_rate_pct",
+      "extracted": 2.5,
+      "final": 2.5,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2024",
+      "gold": 2.5,
+      "raw_correct": true,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "2.5 percent is the annual average CPI inflation projection for 2024 from the Selected Economic Indicators table (C004).",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "B_strict_challenger",
+      "field": "central_bank_policy_rate_pct",
+      "extracted": NaN,
+      "final": NaN,
+      "fallback": true,
+      "fallback_reason": "not extracted (null)",
+      "period": null,
+      "gold": NaN,
+      "raw_correct": true,
+      "correct": true,
+      "judge_verdict": "correctly_null",
+      "judge_comment": "The text only mentions the Bank of Canada beginning to lower policy rates in June without specifying the exact nominal policy rate level; correctly returned as null.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "B_strict_challenger",
+      "field": "non_performing_loan_ratio",
+      "extracted": 0.5,
+      "final": 0.5,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2023",
+      "gold": 0.5,
+      "raw_correct": true,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "0.5 percent is the latest available value (2023) for NPLs to gross loans from Table 7 (C048).",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "B_strict_challenger",
+      "field": "unemployment_rate_pct",
+      "extracted": 6.2,
+      "final": 6.2,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2024",
+      "gold": 6.2,
+      "raw_correct": true,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "6.2 percent is the annual average unemployment rate projected for 2024 from the Selected Economic Indicators table (C003/C004).",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "B_strict_challenger",
+      "field": "tier_1_capital_ratio",
+      "extracted": 15.2,
+      "final": 15.2,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": "2023",
+      "gold": 15.2,
+      "raw_correct": true,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "15.2 percent is the latest available value (2023) for the Tier 1 ratio from Table 7 (C048).",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "C_generic_prompt",
+      "field": "gdp_growth_forecast_pct",
+      "extracted": 1.3,
+      "final": 1.3,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": null,
+      "gold": 1.3,
+      "raw_correct": true,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Matches the 2024 real GDP growth projection of 1.3 percent in the Selected Economic Indicators table.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "C_generic_prompt",
+      "field": "headline_inflation_rate_pct",
+      "extracted": 2.5,
+      "final": 2.5,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": null,
+      "gold": 2.5,
+      "raw_correct": true,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Matches the 2024 CPI inflation (average) projection of 2.5 percent in the Selected Economic Indicators table.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "C_generic_prompt",
+      "field": "central_bank_policy_rate_pct",
+      "extracted": NaN,
+      "final": NaN,
+      "fallback": true,
+      "fallback_reason": "not extracted (null)",
+      "period": null,
+      "gold": NaN,
+      "raw_correct": true,
+      "correct": true,
+      "judge_verdict": "correctly_null",
+      "judge_comment": "The text discusses policy rate cuts and real policy rates, but never explicitly gives the nominal policy rate level.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "C_generic_prompt",
+      "field": "non_performing_loan_ratio",
+      "extracted": 0.5,
+      "final": 0.5,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": null,
+      "gold": 0.5,
+      "raw_correct": true,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Matches the 2023 NPLs to Gross Loans figure of 0.5 percent from Table 7 (Financial Soundness Indicators).",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "C_generic_prompt",
+      "field": "unemployment_rate_pct",
+      "extracted": 6.2,
+      "final": 6.2,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": null,
+      "gold": 6.2,
+      "raw_correct": true,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Matches the 2024 projected average unemployment rate of 6.2 percent from the Selected Economic Indicators table.",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    },
+    {
+      "config": "C_generic_prompt",
+      "field": "tier_1_capital_ratio",
+      "extracted": 15.2,
+      "final": 15.2,
+      "fallback": false,
+      "fallback_reason": null,
+      "period": null,
+      "gold": 15.2,
+      "raw_correct": true,
+      "correct": true,
+      "judge_verdict": "correct",
+      "judge_comment": "Matches the 2023 Tier 1 ratio of 15.2 percent from Table 7 (Financial Soundness Indicators).",
+      "judge_says_ok": true,
+      "judge_agrees_with_human": true
+    }
+  ],
+  "fallback_log": [
+    {
+      "config": "A_strict_extractor",
+      "field": "central_bank_policy_rate_pct",
+      "extracted": NaN,
+      "fallback_reason": "not extracted (null)"
+    },
+    {
+      "config": "B_strict_challenger",
+      "field": "central_bank_policy_rate_pct",
+      "extracted": NaN,
+      "fallback_reason": "not extracted (null)"
+    },
+    {
+      "config": "C_generic_prompt",
+      "field": "central_bank_policy_rate_pct",
+      "extracted": NaN,
+      "fallback_reason": "not extracted (null)"
+    }
+  ],
+  "benchmark": [
+    {
+      "config": "A_strict_extractor",
+      "model": "gemini-3.5-flash",
+      "json_valid": true,
+      "schema_compliant": true,
+      "raw_accuracy_vs_gold_pct": 100.0,
+      "accuracy_vs_gold_pct": 100.0,
+      "fields_extracted_pct": 83.33333333333334,
+      "judge_factual_accuracy": 5,
+      "judge_schema_compliance": 5,
+      "judge_human_agreement_pct": 100.0,
+      "latency_s": 9.01
+    },
+    {
+      "config": "B_strict_challenger",
+      "model": "gemini-3.5-flash-lite",
+      "json_valid": true,
+      "schema_compliant": true,
+      "raw_accuracy_vs_gold_pct": 100.0,
+      "accuracy_vs_gold_pct": 100.0,
+      "fields_extracted_pct": 83.33333333333334,
+      "judge_factual_accuracy": 5,
+      "judge_schema_compliance": 5,
+      "judge_human_agreement_pct": 100.0,
+      "latency_s": 1.77
+    },
+    {
+      "config": "C_generic_prompt",
+      "model": "gemini-3.5-flash",
+      "json_valid": true,
+      "schema_compliant": true,
+      "raw_accuracy_vs_gold_pct": 100.0,
+      "accuracy_vs_gold_pct": 100.0,
+      "fields_extracted_pct": 83.33333333333334,
+      "judge_factual_accuracy": 5,
+      "judge_schema_compliance": 5,
+      "judge_human_agreement_pct": 100.0,
+      "latency_s": 7.98
+    }
+  ],
+  "judge_audits": {
+    "A_strict_extractor": {
+      "field_verdicts": [
+        {
+          "field": "gdp_growth_forecast_pct",
+          "verdict": "correct",
+          "comment": "Accurately extracted 1.3 percent for 2024 from the Selected Economic Indicators table (C003)."
+        },
+        {
+          "field": "headline_inflation_rate_pct",
+          "verdict": "correct",
+          "comment": "Accurately extracted 2.5 percent for 2024 CPI inflation (average) from the Selected Economic Indicators table (C004)."
+        },
+        {
+          "field": "central_bank_policy_rate_pct",
+          "verdict": "correctly_null",
+          "comment": "The text only mentions that the Bank of Canada began lowering rates in June and discusses real policy rate ranges, but does not state the nominal policy rate level."
+        },
+        {
+          "field": "non_performing_loan_ratio",
+          "verdict": "correct",
+          "comment": "Accurately extracted 0.5 percent for 2023 (latest year available) from Table 7 (C048)."
+        },
+        {
+          "field": "unemployment_rate_pct",
+          "verdict": "correct",
+          "comment": "Accurately extracted 6.2 percent for 2024 from the Selected Economic Indicators table (C003/C004)."
+        },
+        {
+          "field": "tier_1_capital_ratio",
+          "verdict": "correct",
+          "comment": "Accurately extracted 15.2 percent for 2023 (latest year available) from Table 7 (C048)."
+        }
+      ],
+      "factual_accuracy": 5,
+      "schema_compliance": 5
+    },
+    "B_strict_challenger": {
+      "field_verdicts": [
+        {
+          "field": "gdp_growth_forecast_pct",
+          "verdict": "correct",
+          "comment": "1.3 percent is the projected real GDP growth rate for 2024, confirmed in both the Selected Economic Indicators table (C003) and the text (C018)."
+        },
+        {
+          "field": "headline_inflation_rate_pct",
+          "verdict": "correct",
+          "comment": "2.5 percent is the annual average CPI inflation projection for 2024 from the Selected Economic Indicators table (C004)."
+        },
+        {
+          "field": "central_bank_policy_rate_pct",
+          "verdict": "correctly_null",
+          "comment": "The text only mentions the Bank of Canada beginning to lower policy rates in June without specifying the exact nominal policy rate level; correctly returned as null."
+        },
+        {
+          "field": "non_performing_loan_ratio",
+          "verdict": "correct",
+          "comment": "0.5 percent is the latest available value (2023) for NPLs to gross loans from Table 7 (C048)."
+        },
+        {
+          "field": "unemployment_rate_pct",
+          "verdict": "correct",
+          "comment": "6.2 percent is the annual average unemployment rate projected for 2024 from the Selected Economic Indicators table (C003/C004)."
+        },
+        {
+          "field": "tier_1_capital_ratio",
+          "verdict": "correct",
+          "comment": "15.2 percent is the latest available value (2023) for the Tier 1 ratio from Table 7 (C048)."
+        }
+      ],
+      "factual_accuracy": 5,
+      "schema_compliance": 5
+    },
+    "C_generic_prompt": {
+      "field_verdicts": [
+        {
+          "field": "country_name",
+          "verdict": "correct",
+          "comment": "Canada is correctly identified."
+        },
+        {
+          "field": "gdp_growth_forecast_pct",
+          "verdict": "correct",
+          "comment": "Matches the 2024 real GDP growth projection of 1.3 percent in the Selected Economic Indicators table."
+        },
+        {
+          "field": "headline_inflation_rate_pct",
+          "verdict": "correct",
+          "comment": "Matches the 2024 CPI inflation (average) projection of 2.5 percent in the Selected Economic Indicators table."
+        },
+        {
+          "field": "central_bank_policy_rate_pct",
+          "verdict": "correctly_null",
+          "comment": "The text discusses policy rate cuts and real policy rates, but never explicitly gives the nominal policy rate level."
+        },
+        {
+          "field": "non_performing_loan_ratio",
+          "verdict": "correct",
+          "comment": "Matches the 2023 NPLs to Gross Loans figure of 0.5 percent from Table 7 (Financial Soundness Indicators)."
+        },
+        {
+          "field": "unemployment_rate_pct",
+          "verdict": "correct",
+          "comment": "Matches the 2024 projected average unemployment rate of 6.2 percent from the Selected Economic Indicators table."
+        },
+        {
+          "field": "tier_1_capital_ratio",
+          "verdict": "correct",
+          "comment": "Matches the 2023 Tier 1 ratio of 15.2 percent from Table 7 (Financial Soundness Indicators)."
+        }
+      ],
+      "factual_accuracy": 5,
+      "schema_compliance": 5
+    }
+  },
+  "retrieved_context_chunks": [
+    "C073",
+    "C018",
+    "C003",
+    "C071",
+    "C004",
+    "C019",
+    "C000",
+    "C062",
+    "C001",
+    "C014",
+    "C088",
+    "C016",
+    "C017",
+    "C105",
+    "C065",
+    "C005",
+    "C048",
+    "C049",
+    "C146",
+    "C101"
+  ]
+}

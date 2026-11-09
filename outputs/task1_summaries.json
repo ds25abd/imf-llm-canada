@@ -1,0 +1,653 @@
+{
+  "report": "Canada: 2024 Article IV Consultation-Press Release; and Staff Report",
+  "report_id": "IMF Country Report No. 24/128",
+  "ungrounded_number_triage": [
+    {
+      "item_id": "S08",
+      "number": "2026",
+      "category": "cross-section leakage",
+      "judge_flagged_item": false
+    }
+  ],
+  "models": {
+    "extractor": "gemini-3.5-flash",
+    "challenger": "gemini-3.5-flash-lite",
+    "judge": "gemini-3.8-flash"
+  },
+  "executive_summary": [
+    {
+      "bullet": "Canada’s six largest banks account for 93 percent of system assets and remain highly capitalized and liquid, with non-performing loans remaining at low levels.",
+      "section_ids": [
+        "S07"
+      ]
+    },
+    {
+      "bullet": "Mortgage delinquency rates remain extremely low at 0.17 percent despite loan repricing, though arrears for auto and installment loans have risen above pre-pandemic levels.",
+      "section_ids": [
+        "S07"
+      ]
+    },
+    {
+      "bullet": "Nonbank financial institutions represent two-thirds of the financial system, but persistent data gaps preclude a definitive risk assessment regarding their leverage and illiquid investments.",
+      "section_ids": [
+        "S01",
+        "S07"
+      ]
+    },
+    {
+      "bullet": "Under the baseline forecast, real GDP growth is projected to pick up to 1.3 percent in 2024, with inflation returning to the 2 percent target by early 2025.",
+      "section_ids": [
+        "S01",
+        "S08"
+      ]
+    },
+    {
+      "bullet": "If high interest rates persist alongside rising unemployment above the 6 percent NAIRU, mortgage resets could generate elevated loan delinquencies and dent bank capitalization.",
+      "section_ids": [
+        "S07",
+        "S08"
+      ]
+    },
+    {
+      "bullet": "Macroprudential measures have been tightened, including supervisory limits on originating mortgages with loan-to-income ratios exceeding 450 percent.",
+      "section_ids": [
+        "S07"
+      ]
+    },
+    {
+      "bullet": "General government gross debt is projected to fall from 107 percent of GDP at end-2023 to 95.25 percent of GDP by end-2029.",
+      "section_ids": [
+        "S08"
+      ]
+    },
+    {
+      "bullet": "Severe housing supply constraints pushed rental vacancy rates down to 1 percent while rent increases averaged 8 percent year-over-year in 2023.",
+      "section_ids": [
+        "S07"
+      ]
+    }
+  ],
+  "section_summaries": [
+    {
+      "section_id": "S01",
+      "title": "Press Release & Executive Board Assessment",
+      "pages": [
+        2,
+        3
+      ],
+      "words": 84,
+      "summary": "Canada has achieved a soft landing, with inflation nearing target and recession avoided due to immigration. Housing affordability has reached a generation-worst level. The financial sector remains resilient with well-capitalized, liquid banks, though nonbank data gaps remain. Real GDP growth is expected to pick up in 2024, with inflation reaching the 2-percent target by early 2025. Executive Directors welcomed the Bank of Canada's rate cuts, advocating data-dependent calibration. Tighter fiscal policy is recommended to support disinflation and rebuild buffers, alongside enhanced federal-provincial supervisory cooperation."
+    },
+    {
+      "section_id": "S04",
+      "title": "Key Issues",
+      "pages": [
+        5
+      ],
+      "words": 88,
+      "summary": "The Canadian economy achieved a soft landing as inflation declined near target. Real GDP growth is projected to pick up in 2024:H2. The Bank of Canada appropriately began lowering policy rates, but a tighter fiscal stance is needed to align the policy mix and support inflation targets. The financial sector is resilient to resetting pandemic-era mortgages under the baseline, but higher-for-longer rates or employment deterioration pose risks. Supervisors must remain vigilant, accelerate federal-provincial supervisory cooperation, and address data gaps, particularly regarding nonbanks. Productivity growth requires urgent structural reforms."
+    },
+    {
+      "section_id": "S06",
+      "title": "Context",
+      "pages": [
+        8
+      ],
+      "words": 86,
+      "summary": "Macroeconomic imbalances are resolving, with inflation back within the Bank of Canada's target range. Economic growth slowed in 2023 without entering a recession, cushioned by a post-pandemic surge in immigration, although GDP per capita contracted. Immigration addressed labor shortages but intensified housing supply constraints, pushing housing affordability to its worst level since the early 1990s. Longstanding structural challenges persist, including lagging productivity growth relative to the United States and climate transition pressures. The domestic political environment is complex ahead of federal elections due by October 2025."
+    },
+    {
+      "section_id": "S07",
+      "title": "Recent Developments",
+      "pages": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "words": 85,
+      "summary": "Real GDP growth slowed to 1.2 percent in 2023, while per capita income shrank by 1.5 percent. Headline inflation fell to 2.9 percent in May 2024, though shelter inflation remained high at 6.4 percent y/y. Population growth hit 3.2 percent in 2023, raising unemployment to 6.2 percent. The banking sector remains resilient, with mortgage delinquency rates at 0.17 percent, though business insolvencies rose. Nonbank financial institutions represent two-thirds of the system, exhibiting high leverage and illiquid asset exposures. Data gaps hinder a conclusive NBFI assessment."
+    },
+    {
+      "section_id": "S08",
+      "title": "Outlook and Risks",
+      "pages": [
+        12,
+        13,
+        14
+      ],
+      "words": 88,
+      "summary": "Under the baseline, real GDP growth is projected at 1.3 percent in 2024, supported by consumption growth of 2.8 percent y/y, with the output gap closing by early 2026. Unemployment is expected to peak at 6.4 percent before normalizing to the 6 percent NAIRU. Inflation is projected to reach 2 percent by early 2025. General government gross debt will decline from 107 percent of GDP at end-2023 to 95.25 percent of GDP by end-2029. Downside risks include higher-for-longer interest rates causing mortgage stress and credit losses for banks."
+    },
+    {
+      "section_id": "S10",
+      "title": "Policy A: Normalizing and Strengthening Macroeconomic Policies",
+      "pages": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "words": 91,
+      "summary": "Monetary policy normalization must proceed cautiously, maintaining a restrictive stance while carefully monitoring shelter inflation and wage dynamics. Fiscal policy should be tighter than projected to support disinflation and rebuild space. Options include raising the Goods and Services Tax rate and streamlining public employment. Adopting a formal fiscal framework would enhance the new quantitative fiscal objectives, such as the 1 percent of GDP annual deficit ceiling starting in 2026/27. Housing supply policies target 3.9 million new homes by 2031, though further efforts, including expanding social housing beyond 4 percent, are required."
+    },
+    {
+      "section_id": "S11",
+      "title": "Policy B: Safeguarding Financial Stability",
+      "pages": [
+        18,
+        19,
+        21
+      ],
+      "words": 89,
+      "summary": "Authorities must continuously monitor liquidity at large institutional investors to mitigate potential contagion driven by margin calls and forced sales. Expanding bank-NBFI linkages make addressing NBFI data gaps urgent. Federal-provincial coordination must be prioritized to resolve regulatory fragmentation ahead of the 2025 FSAP. AML/CFT frameworks require stronger focus on cross-border money laundering risks and broader implementation of provincial beneficial ownership registries to supplement the 2023 federal registry. Additionally, Canada must proactively enforce its foreign bribery legislation under the Corruption of Foreign Public Officials Act to address low enforcement levels."
+    },
+    {
+      "section_id": "S13",
+      "title": "Policy C: Confronting Structural Challenges",
+      "pages": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "words": 87,
+      "summary": "Boosting productivity is critical, requiring incentives for ICT and R&D investment, AI adoption, and lower interprovincial trade barriers. Addressing demographic aging requires effective immigrant skill matching and credential recognition. The national affordable childcare program could increase female labor force participation by 5.5 percentage points over the long term, provided the plan to add 250,000 spaces to existing 750,000 spaces overcomes supply bottlenecks. Climate goals require maintaining carbon pricing, rising to Can$170/ton by 2030. Additional measures are required to close the implementation gap and achieve 2030 emission targets."
+    },
+    {
+      "section_id": "S14",
+      "title": "Staff Appraisal",
+      "pages": [
+        25,
+        26
+      ],
+      "words": 89,
+      "summary": "Canada has achieved a soft landing, though housing affordability has deteriorated and the external position remains moderately weaker than medium-term fundamentals. Monetary policy normalization is appropriate, but the stance must stay restrictive to return inflation to the 2-percent target by early 2025. Fiscal consolidation is needed to complement monetary policy and rebuild buffers. Housing measures should focus on supply, replacing the non-resident purchase ban with a non-discriminatory tax. Financial stability oversight must address nonbank data gaps and leverage. Boosting productivity, supporting childcare supply, and maintaining carbon pricing remain essential."
+    },
+    {
+      "section_id": "S23",
+      "title": "Annex I. The Economic Impact of Immigration",
+      "pages": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "words": 86,
+      "summary": "In Canada, immigrants comprised 8.4 million people or 23 percent of the population in 2021. Economic literature demonstrates that immigration generally enhances economic growth and labor productivity. For OECD countries, a 1 percentage point increase in immigrant inflows relative to total employment raises output by nearly 1 percent by the fifth year, mainly driven by total factor productivity gains. While empirical evidence shows limited negative impacts on native workers' real wages, rapid immigration can create distributional challenges, exacerbate housing affordability pressures, and strain local public infrastructure."
+    },
+    {
+      "section_id": "S24",
+      "title": "Annex II. External Sector Assessment",
+      "pages": [
+        48
+      ],
+      "words": 85,
+      "summary": "Canada’s 2023 external position was moderately weaker than levels implied by medium-term fundamentals. The current account deficit widened to 0.7 percent of GDP, driven by a 6 percent y/y terms-of-trade decline. Staff assess the current account gap at -2.2 to -1.3 percent of GDP and real exchange rate overvaluation between 5.1 and 8.3 percent. Net international investment position rose to 57.6 percent of GDP, while gross external debt reached 143.2 percent of GDP. Structural reforms boosting productivity and tighter fiscal policy would support external rebalancing."
+    },
+    {
+      "section_id": "S25",
+      "title": "Annex III. Sovereign Risk and Debt Sustainability Assessment",
+      "pages": [
+        49,
+        50
+      ],
+      "words": 88,
+      "summary": "Canada maintains a low overall risk of sovereign stress and possesses fiscal space. Consolidated general government gross debt stood at 107 percent of GDP at end-2023 (90 percent of GDP excluding accounts payable). Sizable financial assets of 94.25 percent of GDP kept net debt low at 12.75 percent of GDP. Favorable growth-interest differentials and fiscal consolidation are projected to reduce gross debt to 95.25 percent of GDP by 2029. Gross financing needs, which were 16.25 percent of GDP in 2023, will remain manageable at 20-22.5 percent of GDP."
+    },
+    {
+      "section_id": "S27",
+      "title": "Annex IV. Risk Assessment Matrix",
+      "pages": [
+        58,
+        59
+      ],
+      "words": 84,
+      "summary": "Macroeconomic risks are balanced. Key global downside risks include an abrupt global growth slowdown, commodity price volatility, geoeconomic fragmentation, cyberthreats, and monetary policy miscalibration. Domestically, high mortgage rates present a medium risk of a house price correction; while banks remain resilient under the baseline, delayed monetary easing could increase household debt service strains, driving loan delinquencies and credit losses. Political uncertainty surrounding upcoming elections poses policy continuity risks. Recommended policy responses prioritize data-dependent monetary policy, macroprudential measures, structural productivity reforms, and multilateral trade cooperation."
+    },
+    {
+      "section_id": "S28",
+      "title": "Annex V. Passthrough of Wage Growth to Price Inflation",
+      "pages": [
+        60,
+        61,
+        62
+      ],
+      "words": 82,
+      "summary": "An empirical examination of 85 output sectors from 2001 to 2023 indicates that wage growth passthrough to consumer price inflation is limited. In the goods sector, the passthrough of wage growth to prices is statistically indistinguishable from zero, peaking at around 5 percent in recent rolling estimations. In the service sector, passthrough peaks in the second quarter at approximately 12 percent, reflecting higher labor intensity. Consequently, current elevated wage growth is unlikely to pose a substantial obstacle to completing Canada's disinflation process."
+    },
+    {
+      "section_id": "S29",
+      "title": "Annex VI. Monetary Policy Transmission in the Post-pandemic",
+      "pages": [
+        63,
+        64,
+        65
+      ],
+      "words": 86,
+      "summary": "A Heterogeneous Agent New Keynesian model shows that monetary policy transmission may have weakened during the recent tightening cycle. Although mortgage debt rose to 88 percent of GDP and variable-rate mortgages increased to 30 percent, higher household net worth—with net housing assets expanding by over 40 percent of GDP—counteracted cash-flow pressures on borrowers. Furthermore, a looser fiscal stance and increased corporate market power further dampened transmission efficiency, with every 1 percentage point increase in debt from interest costs reducing disinflation by up to 40 basis points."
+    },
+    {
+      "section_id": "S31",
+      "title": "Annex VII. Canada’s Housing Supply Shortage: Lessons from",
+      "pages": [
+        67,
+        69,
+        74
+      ],
+      "words": 82,
+      "summary": "Canada faces a severe housing supply shortage, with housing stock declining to 419 dwellings per 1,000 inhabitants in 2020, well below the OECD average of 485. The national housing gap exceeds 3.5 million units. To absorb annual household formation of 250,000 and close the gap, annual completions must reach 500,000 units, compared to historical rates of 150,000 to 250,000 units. Shortages are acute in social housing. Main supply constraints include high land and construction costs, under-investment, infrastructure deficits, and municipal permitting delays."
+    },
+    {
+      "section_id": "S36",
+      "title": "Annex VIII. Bank-NBFI Linkages",
+      "pages": [
+        75,
+        76,
+        79
+      ],
+      "words": 81,
+      "summary": "Canada’s financial sector assets reached $14 trillion or 681 percent of GDP at end-2022. Nonbank financial institutions account for a major share, with banks’ exposures to pension funds and other financial intermediaries standing at 3 percent and 4 percent of bank assets, respectively—the highest among advanced economies. Stock market analysis reveals that abnormal return correlations between banks and nonbanks spike during stress episodes, reaching up to 80 percent during the Global Financial Crisis, highlighting significant potential for cross-sectoral systemic risk contagion."
+    },
+    {
+      "section_id": "S39",
+      "title": "Annex IX. Transnational Aspects of Corruption",
+      "pages": [
+        82
+      ],
+      "words": 83,
+      "summary": "The OECD Working Group on Bribery acknowledged Canada's legal enhancements to the Corruption of Foreign Public Officials Act and the 2018 Remediation Agreement framework. However, foreign bribery enforcement remains exceptionally low, with only two individual convictions and four company sanctions over 25 years. Canada must urgently step up proactive enforcement, maintain comprehensive statistics on foreign bribery investigations, align corporate liability rules by removing high-level managerial knowledge requirements, strengthen whistleblower protections, and expand beneficial ownership transparency to mitigate transnational corruption and money laundering risks."
+    },
+    {
+      "section_id": "S40",
+      "title": "Annex X. Productivity in Canada: Challenges and Opportunities",
+      "pages": [
+        83,
+        84,
+        85,
+        86,
+        89,
+        92,
+        93
+      ],
+      "words": 83,
+      "summary": "Canada’s growth slowdown stems from declining contributions from capital, labor, and multifactor productivity. R&D spending as a share of GDP has continuously dropped, falling behind G7 peers. Investment remains heavily concentrated in mining, oil, and gas, leaving ICT and intellectual property investment weak. Intra-industry productivity disparities across provinces reflect persistent interprovincial trade barriers. Firm-level data links corporate investment directly to productivity gains. Harnessing artificial intelligence offers significant potential to boost total factor productivity, provided Canada addresses its lag in commercialization and infrastructure investment."
+    },
+    {
+      "section_id": "S45",
+      "title": "Annex XI. Gender Equality and Affordable Childcare: The Case of",
+      "pages": [
+        94,
+        95,
+        96,
+        97,
+        98
+      ],
+      "words": 85,
+      "summary": "Female labor force participation was 76.5 percent in January 2024, compared to 82.9 percent for males, with the largest gaps among women in their 30s. Calibrating an overlapping generations model to the Canada-wide Early Learning and Child Care plan—reducing daily fees from Can$43 to Can$10—projects a long-term female labor force participation increase of 5.5 percentage points and a 1.8 percent rise in GDP. Combining fee reductions with eliminating the unexplained gender pay gap could increase GDP by 8.3 percent. Expanding childcare facility supply is essential."
+    },
+    {
+      "section_id": "S46",
+      "title": "Annex XII. Canada’s Climate Mitigation Policies",
+      "pages": [
+        99,
+        100,
+        101
+      ],
+      "words": 83,
+      "summary": "Canada aims to reduce greenhouse gas emissions by 40 to 45 percent below 2005 levels by 2030, anchored by carbon pricing rising to Can$170/ton CO2 by 2030. A general equilibrium model demonstrates that carbon taxation achieves required emission reductions at significantly lower fiscal and consumption costs than capital or R&D subsidies. The scheduled carbon price increase will reduce emissions by 17 percent relative to 2023 levels (28 percent relative to 2005). Achieving overall targets requires maintaining carbon pricing while streamlining complementary mitigation policies."
+    },
+    {
+      "section_id": "S48",
+      "title": "Annex XIII. Data Issues",
+      "pages": [
+        103
+      ],
+      "words": 81,
+      "summary": "Canada’s economic data are broadly adequate for surveillance, achieving top ratings across national accounts, prices, and external sector statistics. However, monetary and financial statistics exhibit shortcomings. Central government operational data dissemination takes 60 days rather than the recommended 30 days. Significant data gaps persist regarding nonbank financial institutions and detailed depository corporation balance sheets, including counterparty and currency breakdowns. Statistics Canada plans to resume publishing balance sheet data for other depository and financial corporations by end-2024 to improve financial stability analysis."
+    },
+    {
+      "section_id": "S51",
+      "title": "Annex XIV. Progress on Past Article IV Policy Recommendations",
+      "pages": [
+        106,
+        107
+      ],
+      "words": 86,
+      "summary": "Canada has advanced key 2023 policy recommendations. The Bank of Canada pursued data-dependent tightening and enhanced transparency through Governing Council deliberation summaries. Quantitative fiscal objectives introduced in the 2023 Fall Economic Statement established an annual deficit ceiling of 1 percent of GDP from 2026/27. Housing initiatives expanded via the Housing Accelerator Fund and 2024 Budget measures. AML/CFT frameworks were strengthened by launching a federal beneficial ownership registry. Additionally, OSFI updated capital adequacy rules, requiring internal ratings-based mortgage models to include at least 10 percent stress-period data."
+    },
+    {
+      "section_id": "S52",
+      "title": "Annex XV. State of Progress in the Implementation of 2019 FSAP Key",
+      "pages": [
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124
+      ],
+      "words": 84,
+      "summary": "Authorities have made progress on 2019 FSAP recommendations. OSFI and AMF updated residential mortgage underwriting guidelines and capital adequacy requirements to cover higher-risk mortgage exposures. Systemic risk surveillance was strengthened via the Heads of Agencies MoU on information sharing and the Bank of Canada's new Systemic Risk Analytics team. The Canadian Securities Administrators adopted a multilateral instrument for OTC derivatives business conduct effective September 2024. Desjardins Group's Resolution Board became operational in January 2024, and the Bank of Canada conducted emergency lending assistance testing."
+    },
+    {
+      "section_id": "S54",
+      "title": "Informational Annex (Fund Relations)",
+      "pages": [
+        126,
+        127
+      ],
+      "words": 85,
+      "summary": "Canada joined the IMF on December 27, 1945, maintaining Article VIII status and a free-floating exchange rate. As of June 3, 2024, Canada's quota stands at SDR 11,023.90 million, with Fund holdings of currency at SDR 8,318.96 million (75.46 percent of quota) and a reserve tranche position of SDR 2,715.54 million (24.63 percent of quota). SDR holdings total SDR 16,838.47 million (101.72 percent of allocation). Canada is on a standard 12-month Article IV cycle; the next Financial Sector Assessment Program update is scheduled for 2025."
+    },
+    {
+      "section_id": "S55",
+      "title": "Staff Supplement (post-report developments)",
+      "pages": [
+        128,
+        129
+      ],
+      "words": 82,
+      "summary": "Labor market conditions softened in June 2024 as unemployment rose to 6.4 percent and the vacancy-unemployment ratio fell to 0.4, despite hourly wage growth accelerating to 5.4 percent y/y. On July 2, 2024, authorities launched a public consultation regarding Chinese electric vehicles, considering options such as customs surtaxes and investment restrictions. Chinese EV imports increased from Can$0.8 million in 2018 to Can$2.2 billion in 2023. Staff emphasize that any trade measures should remain transparent, evidence-based, WTO-consistent, and mindful of climate decarbonization costs."
+    }
+  ],
+  "constraint_violations_repaired": [],
+  "judge_audit": [
+    {
+      "item_id": "S01",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S04",
+      "unsupported_claims": [],
+      "missing_key_points": [
+        "Housing affordability crisis and policies to address the large housing supply gap"
+      ],
+      "consistency": 5,
+      "completeness": 4,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S06",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S07",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S08",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 0.9166666666666666,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S10",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S11",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S13",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S14",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S23",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S24",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S25",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S27",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": NaN,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S28",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S29",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S31",
+      "unsupported_claims": [
+        "Municipal permitting delays (not mentioned in the provided excerpt)"
+      ],
+      "missing_key_points": [],
+      "consistency": 4,
+      "completeness": 5,
+      "factual_alignment": 4,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 1
+    },
+    {
+      "item_id": "S36",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S39",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S40",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": NaN,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S45",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S46",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S48",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S51",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S52",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S54",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "S55",
+      "unsupported_claims": [],
+      "missing_key_points": [],
+      "consistency": 5,
+      "completeness": 5,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    },
+    {
+      "item_id": "EXEC",
+      "unsupported_claims": [],
+      "missing_key_points": [
+        "Monetary policy stance and rate cut considerations",
+        "Fiscal policy recommendations (consolidation, tax measures, formal fiscal framework)",
+        "Structural productivity challenges, childcare supply, and labor force participation",
+        "Climate mitigation strategy and carbon pricing preservation",
+        "Consultation on trade measures regarding electric vehicles"
+      ],
+      "consistency": 5,
+      "completeness": 2,
+      "factual_alignment": 5,
+      "numeric_grounding": 1.0,
+      "n_unsupported": 0
+    }
+  ]
+}

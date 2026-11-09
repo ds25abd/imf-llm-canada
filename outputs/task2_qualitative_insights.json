@@ -1,0 +1,108 @@
+{
+  "strengths": [
+    {
+      "item": "Surging immigration supporting output growth and labor supply",
+      "explanation": "Surging post-pandemic immigration has cushioned economic growth, expanded labor supply, and filled critical vacancies, preventing a recession despite shrinking per capita income.",
+      "evidence_quote": "supported by an historic post-pandemic surge in immigration, even as GDP per capita has shrunk",
+      "section_id": "S06",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "Resilient banking sector with strong capital and liquidity buffers",
+      "explanation": "Major Canadian banks maintain high capitalization, strong liquidity buffers, and low non-performing loan levels, enabling them to weather interest rate repricing shocks.",
+      "evidence_quote": "the financial sector remains resilient, with banks well capitalized and liquid",
+      "section_id": "S01",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "Prudent fiscal policy with moderate debt levels relative to peers",
+      "explanation": "Canada maintains prudent fiscal management, enjoying a AAA rating, lower general government deficits, and moderate gross debt compared to G7 peers.",
+      "evidence_quote": "prudent fiscal policy in international comparison, with Canada enjoying a AAA rating.",
+      "section_id": "S01",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "Export capacity boost from the Trans Mountain pipeline expansion",
+      "explanation": "Economic activity and net export performance are set to receive ongoing support from the completion and expansion of the Trans Mountain pipeline.",
+      "evidence_quote": "The expansion of the Trans Mountain pipeline could be an upside risk to exports.",
+      "section_id": "S08",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "National affordable childcare program potential to boost labor participation",
+      "explanation": "The nationwide affordable childcare program aims to significantly raise female labor force participation over the long term, provided childcare supply constraints are overcome.",
+      "evidence_quote": "reducing the costs of childcare could boost female LFP by some 5.5 percentage points over the longer term",
+      "section_id": "S13",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "Established carbon pricing framework anchoring cost-effective climate mitigation",
+      "explanation": "Canada's pre-determined carbon price trajectory provides a cost-effective market mechanism to guide household and business decisions toward long-term decarbonization goals.",
+      "evidence_quote": "the pre-determined increase in carbon prices until 2030 provides a solid market signal on which market agents can base their decisions",
+      "section_id": "S13",
+      "quote_support": 1.0,
+      "quote_verified": true
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "item": "Severe housing unaffordability and acute supply bottlenecks",
+      "explanation": "Housing affordability has deteriorated to decades-low levels, as surging population growth rapidly expanded housing demand while structural supply constraints prevented adequate homebuilding.",
+      "evidence_quote": "Housing affordability has reached its worst levels in a generation, with housing supply unable to fully meet growing demand.",
+      "section_id": "S01",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "Lagging aggregate productivity growth and low capital investment",
+      "explanation": "Canada persistently trails peer economies in productivity growth and business investment, particularly in sectors such as information technology, R&D, and education.",
+      "evidence_quote": "Productivity in Canada is among the lowest in the G7, as discussed in the 2023 Article IV consultation, with a series of factors behind this trend.",
+      "section_id": "S13",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "Household debt vulnerabilities amidst pandemic-era mortgage repricing",
+      "explanation": "High household indebtedness exposes borrowers to debt-service distress as low-interest, pandemic-era mortgages reprice at higher interest rates over the coming period.",
+      "evidence_quote": "Higher-for-longer interest rates could increase the share of households (and likely companies as well) that are financially stretched, especially given the many pandemic-era mortgages that will be repricing in the period ahead.",
+      "section_id": "S08",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "Nonbank financial sector data gaps and potential liquidity risks",
+      "explanation": "Lack of comprehensive nonbank data complicates systemic risk assessment, while institutional investors' shift toward illiquid assets and leveraged strategies increases liquidity squeeze risks.",
+      "evidence_quote": "data gaps preclude a more definitive assessment of nonbank financial institutions.",
+      "section_id": "S01",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "Interprovincial trade barriers dampening domestic commerce and productivity",
+      "explanation": "Internal trade barriers across Canadian provinces restrict domestic market integration, dampen capital investment, and depress aggregate productivity growth.",
+      "evidence_quote": "effort should be given to tackling high interprovincial trade barriers that may be dampening aggregate productivity growth.",
+      "section_id": "S13",
+      "quote_support": 1.0,
+      "quote_verified": true
+    },
+    {
+      "item": "Implementation gap in reaching 2030 emission reduction targets",
+      "explanation": "Existing and announced climate policies fall short of Canada's target to cut 2030 emissions by 40–45 percent relative to 2005 levels, leaving an implementation gap.",
+      "evidence_quote": "Current and proposed policies, if fully implemented, should allow Canada to achieve between 80 and 85 percent of its climate mitigation target by 2030",
+      "section_id": "S13",
+      "quote_support": 1.0,
+      "quote_verified": true
+    }
+  ],
+  "schema_diagnostics": {
+    "json_valid": true,
+    "schema_valid": true,
+    "repaired": false,
+    "error": null
+  }
+}

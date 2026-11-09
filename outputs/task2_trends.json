@@ -1,0 +1,770 @@
+{
+  "series": [
+    {
+      "series": "Real GDP growth",
+      "unit": "Percentage change",
+      "year": 2020,
+      "value": -5.0,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Real GDP growth",
+      "unit": "Percentage change",
+      "year": 2021,
+      "value": 5.3,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Real GDP growth",
+      "unit": "Percentage change",
+      "year": 2022,
+      "value": 3.8,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Real GDP growth",
+      "unit": "Percentage change",
+      "year": 2023,
+      "value": 1.2,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Real GDP growth",
+      "unit": "Percentage change",
+      "year": 2024,
+      "value": 1.3,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Real GDP growth",
+      "unit": "Percentage change",
+      "year": 2025,
+      "value": 2.4,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Real GDP growth",
+      "unit": "Percentage change",
+      "year": 2026,
+      "value": 2.0,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Real GDP growth",
+      "unit": "Percentage change",
+      "year": 2027,
+      "value": 1.8,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Real GDP growth",
+      "unit": "Percentage change",
+      "year": 2028,
+      "value": 1.8,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Real GDP growth",
+      "unit": "Percentage change",
+      "year": 2029,
+      "value": 1.6,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "CPI inflation (average)",
+      "unit": "Percentage change",
+      "year": 2020,
+      "value": 0.7,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "CPI inflation (average)",
+      "unit": "Percentage change",
+      "year": 2021,
+      "value": 3.4,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "CPI inflation (average)",
+      "unit": "Percentage change",
+      "year": 2022,
+      "value": 6.8,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "CPI inflation (average)",
+      "unit": "Percentage change",
+      "year": 2023,
+      "value": 3.9,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "CPI inflation (average)",
+      "unit": "Percentage change",
+      "year": 2024,
+      "value": 2.5,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "CPI inflation (average)",
+      "unit": "Percentage change",
+      "year": 2025,
+      "value": 2.0,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "CPI inflation (average)",
+      "unit": "Percentage change",
+      "year": 2026,
+      "value": 2.0,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "CPI inflation (average)",
+      "unit": "Percentage change",
+      "year": 2027,
+      "value": 2.0,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "CPI inflation (average)",
+      "unit": "Percentage change",
+      "year": 2028,
+      "value": 2.0,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "CPI inflation (average)",
+      "unit": "Percentage change",
+      "year": 2029,
+      "value": 2.0,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Unemployment rate (average)",
+      "unit": "Percent",
+      "year": 2020,
+      "value": 9.7,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Unemployment rate (average)",
+      "unit": "Percent",
+      "year": 2021,
+      "value": 7.5,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Unemployment rate (average)",
+      "unit": "Percent",
+      "year": 2022,
+      "value": 5.3,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Unemployment rate (average)",
+      "unit": "Percent",
+      "year": 2023,
+      "value": 5.4,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Unemployment rate (average)",
+      "unit": "Percent",
+      "year": 2024,
+      "value": 6.2,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Unemployment rate (average)",
+      "unit": "Percent",
+      "year": 2025,
+      "value": 6.3,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Unemployment rate (average)",
+      "unit": "Percent",
+      "year": 2026,
+      "value": 6.0,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Unemployment rate (average)",
+      "unit": "Percent",
+      "year": 2027,
+      "value": 6.0,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Unemployment rate (average)",
+      "unit": "Percent",
+      "year": 2028,
+      "value": 6.0,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Unemployment rate (average)",
+      "unit": "Percent",
+      "year": 2029,
+      "value": 6.0,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Household credit growth",
+      "unit": "Percentage change",
+      "year": 2020,
+      "value": 5.2,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Household credit growth",
+      "unit": "Percentage change",
+      "year": 2021,
+      "value": 10.8,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Household credit growth",
+      "unit": "Percentage change",
+      "year": 2022,
+      "value": 9.9,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Household credit growth",
+      "unit": "Percentage change",
+      "year": 2023,
+      "value": 5.0,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Household credit growth",
+      "unit": "Percentage change",
+      "year": 2024,
+      "value": 3.6,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Household credit growth",
+      "unit": "Percentage change",
+      "year": 2025,
+      "value": 3.5,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Household credit growth",
+      "unit": "Percentage change",
+      "year": 2026,
+      "value": 3.5,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Household credit growth",
+      "unit": "Percentage change",
+      "year": 2027,
+      "value": 3.5,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Household credit growth",
+      "unit": "Percentage change",
+      "year": 2028,
+      "value": 3.5,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Household credit growth",
+      "unit": "Percentage change",
+      "year": 2029,
+      "value": 3.4,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Business credit growth",
+      "unit": "Percentage change",
+      "year": 2020,
+      "value": -0.9,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Business credit growth",
+      "unit": "Percentage change",
+      "year": 2021,
+      "value": -12.7,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Business credit growth",
+      "unit": "Percentage change",
+      "year": 2022,
+      "value": 6.4,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Business credit growth",
+      "unit": "Percentage change",
+      "year": 2023,
+      "value": 3.4,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Business credit growth",
+      "unit": "Percentage change",
+      "year": 2024,
+      "value": 3.6,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Business credit growth",
+      "unit": "Percentage change",
+      "year": 2025,
+      "value": 3.5,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Business credit growth",
+      "unit": "Percentage change",
+      "year": 2026,
+      "value": 3.5,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Business credit growth",
+      "unit": "Percentage change",
+      "year": 2027,
+      "value": 3.5,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Business credit growth",
+      "unit": "Percentage change",
+      "year": 2028,
+      "value": 3.5,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "Business credit growth",
+      "unit": "Percentage change",
+      "year": 2029,
+      "value": 3.4,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "General government gross debt (% of GDP)",
+      "unit": "Percent of GDP",
+      "year": 2020,
+      "value": 118.2,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "General government gross debt (% of GDP)",
+      "unit": "Percent of GDP",
+      "year": 2021,
+      "value": 113.5,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "General government gross debt (% of GDP)",
+      "unit": "Percent of GDP",
+      "year": 2022,
+      "value": 107.4,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "General government gross debt (% of GDP)",
+      "unit": "Percent of GDP",
+      "year": 2023,
+      "value": 107.0,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "General government gross debt (% of GDP)",
+      "unit": "Percent of GDP",
+      "year": 2024,
+      "value": 104.9,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "General government gross debt (% of GDP)",
+      "unit": "Percent of GDP",
+      "year": 2025,
+      "value": 102.1,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "General government gross debt (% of GDP)",
+      "unit": "Percent of GDP",
+      "year": 2026,
+      "value": 100.1,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "General government gross debt (% of GDP)",
+      "unit": "Percent of GDP",
+      "year": 2027,
+      "value": 98.4,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "General government gross debt (% of GDP)",
+      "unit": "Percent of GDP",
+      "year": 2028,
+      "value": 96.8,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "General government gross debt (% of GDP)",
+      "unit": "Percent of GDP",
+      "year": 2029,
+      "value": 95.2,
+      "projected": true,
+      "llm_projected_flag": true,
+      "matched_table_row": "Canada: Selected Economic Indicators 1/",
+      "verified_against_table": true
+    },
+    {
+      "series": "NPLs to gross loans",
+      "unit": "Percent",
+      "year": 2020,
+      "value": 0.5,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Table 7. Canada: Financial Soundness Indicators, 2020–23",
+      "verified_against_table": true
+    },
+    {
+      "series": "NPLs to gross loans",
+      "unit": "Percent",
+      "year": 2021,
+      "value": 0.4,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Table 7. Canada: Financial Soundness Indicators, 2020–23",
+      "verified_against_table": true
+    },
+    {
+      "series": "NPLs to gross loans",
+      "unit": "Percent",
+      "year": 2022,
+      "value": 0.3,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Table 7. Canada: Financial Soundness Indicators, 2020–23",
+      "verified_against_table": true
+    },
+    {
+      "series": "NPLs to gross loans",
+      "unit": "Percent",
+      "year": 2023,
+      "value": 0.5,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Table 7. Canada: Financial Soundness Indicators, 2020–23",
+      "verified_against_table": true
+    },
+    {
+      "series": "Tier 1 ratio",
+      "unit": "Percent",
+      "year": 2020,
+      "value": 13.9,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Table 7. Canada: Financial Soundness Indicators, 2020–23",
+      "verified_against_table": true
+    },
+    {
+      "series": "Tier 1 ratio",
+      "unit": "Percent",
+      "year": 2021,
+      "value": 15.1,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Table 7. Canada: Financial Soundness Indicators, 2020–23",
+      "verified_against_table": true
+    },
+    {
+      "series": "Tier 1 ratio",
+      "unit": "Percent",
+      "year": 2022,
+      "value": 15.3,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Table 7. Canada: Financial Soundness Indicators, 2020–23",
+      "verified_against_table": true
+    },
+    {
+      "series": "Tier 1 ratio",
+      "unit": "Percent",
+      "year": 2023,
+      "value": 15.2,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Table 7. Canada: Financial Soundness Indicators, 2020–23",
+      "verified_against_table": true
+    },
+    {
+      "series": "Total capital ratio",
+      "unit": "Percent",
+      "year": 2020,
+      "value": 16.1,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Table 7. Canada: Financial Soundness Indicators, 2020–23",
+      "verified_against_table": true
+    },
+    {
+      "series": "Total capital ratio",
+      "unit": "Percent",
+      "year": 2021,
+      "value": 17.1,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Table 7. Canada: Financial Soundness Indicators, 2020–23",
+      "verified_against_table": true
+    },
+    {
+      "series": "Total capital ratio",
+      "unit": "Percent",
+      "year": 2022,
+      "value": 17.3,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Table 7. Canada: Financial Soundness Indicators, 2020–23",
+      "verified_against_table": true
+    },
+    {
+      "series": "Total capital ratio",
+      "unit": "Percent",
+      "year": 2023,
+      "value": 17.1,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Table 7. Canada: Financial Soundness Indicators, 2020–23",
+      "verified_against_table": true
+    },
+    {
+      "series": "Return on equity",
+      "unit": "Percent",
+      "year": 2020,
+      "value": 13.2,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Table 7. Canada: Financial Soundness Indicators, 2020–23",
+      "verified_against_table": true
+    },
+    {
+      "series": "Return on equity",
+      "unit": "Percent",
+      "year": 2021,
+      "value": 17.3,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Table 7. Canada: Financial Soundness Indicators, 2020–23",
+      "verified_against_table": true
+    },
+    {
+      "series": "Return on equity",
+      "unit": "Percent",
+      "year": 2022,
+      "value": 18.2,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Table 7. Canada: Financial Soundness Indicators, 2020–23",
+      "verified_against_table": true
+    },
+    {
+      "series": "Return on equity",
+      "unit": "Percent",
+      "year": 2023,
+      "value": 12.0,
+      "projected": false,
+      "llm_projected_flag": false,
+      "matched_table_row": "Table 7. Canada: Financial Soundness Indicators, 2020–23",
+      "verified_against_table": true
+    }
+  ],
+  "diagnostics": {
+    "json_valid": true,
+    "schema_valid": true,
+    "repaired": false,
+    "error": null
+  }
+}

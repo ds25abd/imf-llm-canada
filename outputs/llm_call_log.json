@@ -1,0 +1,210 @@
+[
+  {
+    "task": "section_summaries_b0",
+    "model": "gemini-3.5-flash",
+    "cached": true,
+    "latency_s": 56.159,
+    "prompt_tokens": 47265,
+    "output_tokens": 3859
+  },
+  {
+    "task": "executive_summary",
+    "model": "gemini-3.5-flash",
+    "cached": true,
+    "latency_s": 12.379,
+    "prompt_tokens": 13749,
+    "output_tokens": 544
+  },
+  {
+    "task": "judge_summaries_b0",
+    "model": "gemini-3.8-flash",
+    "cached": true,
+    "latency_s": 153.549,
+    "prompt_tokens": 64429,
+    "output_tokens": 1818
+  },
+  {
+    "task": "theme_classification_b0",
+    "model": "gemini-3.5-flash-lite",
+    "cached": true,
+    "latency_s": 11.233,
+    "prompt_tokens": 51718,
+    "output_tokens": 5797
+  },
+  {
+    "task": "qualitative_insights",
+    "model": "gemini-3.5-flash",
+    "cached": true,
+    "latency_s": 26.56,
+    "prompt_tokens": 13730,
+    "output_tokens": 1239
+  },
+  {
+    "task": "indicators_A_strict_extractor",
+    "model": "gemini-3.5-flash",
+    "cached": true,
+    "latency_s": 9.007,
+    "prompt_tokens": 9011,
+    "output_tokens": 411
+  },
+  {
+    "task": "indicators_B_strict_challenger",
+    "model": "gemini-3.5-flash-lite",
+    "cached": true,
+    "latency_s": 1.773,
+    "prompt_tokens": 9011,
+    "output_tokens": 546
+  },
+  {
+    "task": "indicators_C_generic",
+    "model": "gemini-3.5-flash",
+    "cached": true,
+    "latency_s": 7.976,
+    "prompt_tokens": 8701,
+    "output_tokens": 113
+  },
+  {
+    "task": "judge_indicators_A_strict_extractor",
+    "model": "gemini-3.8-flash",
+    "cached": true,
+    "latency_s": 323.79,
+    "prompt_tokens": 9464,
+    "output_tokens": 432
+  },
+  {
+    "task": "judge_indicators_B_strict_challenger",
+    "model": "gemini-3.8-flash",
+    "cached": true,
+    "latency_s": 276.993,
+    "prompt_tokens": 9464,
+    "output_tokens": 446
+  },
+  {
+    "task": "judge_indicators_C_generic_prompt",
+    "model": "gemini-3.8-flash",
+    "cached": true,
+    "latency_s": 307.17,
+    "prompt_tokens": 9044,
+    "output_tokens": 438
+  },
+  {
+    "task": "trend_extraction",
+    "model": "gemini-3.5-flash",
+    "cached": true,
+    "latency_s": 29.56,
+    "prompt_tokens": 3270,
+    "output_tokens": 1729
+  },
+  {
+    "task": "multi_query_generation",
+    "model": "gemini-3.5-flash-lite",
+    "cached": true,
+    "latency_s": 1.454,
+    "prompt_tokens": 126,
+    "output_tokens": 351
+  },
+  {
+    "task": "rag_closed_book",
+    "model": "gemini-3.5-flash",
+    "cached": true,
+    "latency_s": 16.327,
+    "prompt_tokens": 144,
+    "output_tokens": 335
+  },
+  {
+    "task": "rag_single_q0",
+    "model": "gemini-3.5-flash",
+    "cached": true,
+    "latency_s": 4.136,
+    "prompt_tokens": 1864,
+    "output_tokens": 82
+  },
+  {
+    "task": "rag_multi_q0",
+    "model": "gemini-3.5-flash",
+    "cached": true,
+    "latency_s": 3.312,
+    "prompt_tokens": 2837,
+    "output_tokens": 82
+  },
+  {
+    "task": "judge_rag_q0",
+    "model": "gemini-3.8-flash",
+    "cached": true,
+    "latency_s": 287.564,
+    "prompt_tokens": 3192,
+    "output_tokens": 258
+  },
+  {
+    "task": "rag_single_q1",
+    "model": "gemini-3.5-flash",
+    "cached": true,
+    "latency_s": 5.799,
+    "prompt_tokens": 1916,
+    "output_tokens": 155
+  },
+  {
+    "task": "rag_multi_q1",
+    "model": "gemini-3.5-flash",
+    "cached": true,
+    "latency_s": 6.495,
+    "prompt_tokens": 3075,
+    "output_tokens": 175
+  },
+  {
+    "task": "judge_rag_q1",
+    "model": "gemini-3.8-flash",
+    "cached": true,
+    "latency_s": 264.44,
+    "prompt_tokens": 3590,
+    "output_tokens": 223
+  },
+  {
+    "task": "rag_single_q2",
+    "model": "gemini-3.5-flash",
+    "cached": true,
+    "latency_s": 5.748,
+    "prompt_tokens": 2038,
+    "output_tokens": 135
+  },
+  {
+    "task": "rag_multi_q2",
+    "model": "gemini-3.5-flash",
+    "cached": true,
+    "latency_s": 6.221,
+    "prompt_tokens": 3327,
+    "output_tokens": 147
+  },
+  {
+    "task": "judge_rag_q2",
+    "model": "gemini-3.8-flash",
+    "cached": true,
+    "latency_s": 161.845,
+    "prompt_tokens": 3796,
+    "output_tokens": 263
+  },
+  {
+    "task": "rag_single_q3",
+    "model": "gemini-3.5-flash",
+    "cached": true,
+    "latency_s": 5.307,
+    "prompt_tokens": 1854,
+    "output_tokens": 111
+  },
+  {
+    "task": "rag_multi_q3",
+    "model": "gemini-3.5-flash",
+    "cached": true,
+    "latency_s": 7.166,
+    "prompt_tokens": 3200,
+    "output_tokens": 129
+  },
+  {
+    "task": "judge_rag_q3",
+    "model": "gemini-3.8-flash",
+    "cached": true,
+    "latency_s": 299.297,
+    "prompt_tokens": 3621,
+    "output_tokens": 193
+  }
+]
