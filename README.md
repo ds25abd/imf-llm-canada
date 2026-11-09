@@ -29,8 +29,7 @@ Locally: `pip install -r requirements.txt`, then `jupyter notebook IMF_Canada_LL
 ## Repository layout
 
 ```
-IMF_Canada_LLM_Pipeline.ipynb   the executable notebook (generated from notebook_src.py)
-notebook_src.py                 notebook source in percent format; build_notebook.py converts it
+IMF_Canada_LLM_Pipeline.ipynb   the executable notebook (all code, prompts, outputs and figures)
 data/                           the IMF report PDF
 cache/                          LLM response cache, resolved model names, embedding cache
 outputs/                        JSON outputs (indicators, themes, insights, trends, RAG evaluation, call log)

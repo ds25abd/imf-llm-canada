@@ -7,3 +7,6 @@ report/
 *.docx
 Report*.pdf
 *.log
+# local development helpers (the notebook is the single source submitted)
+notebook_src.py
+build_notebook.py
